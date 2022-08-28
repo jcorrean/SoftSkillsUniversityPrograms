@@ -1,4 +1,4 @@
-setwd("/home/jc/PilotoPilar")
+setwd("/home/jc/Documents/PaperHabilidadesBlandasPilar")
 listado <- data.frame(dir())
 library(readtext)
 library(tm)
