@@ -46,8 +46,8 @@ plot(bn,vertex.color=colors[V(bn)$type+1],
 
 
 plot(bn, layout = layout_nicely,
-     vertex.color=c("blue","red")[V(bn)$type+1], 
-     vertex.size=3,
+     vertex.color=c("lightgreen","red")[V(bn)$type+1], 
+     vertex.size=4,
      vertex.label=NA)
 
 toks <- veamos %>%
