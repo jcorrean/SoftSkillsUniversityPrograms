@@ -17,12 +17,22 @@ pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
 paved <- data.frame(pave)
 
+Enfoque <- data.frame(Enfoque=c("Cualidades", "Competencias", "Alfabetización"),
+                 Frecuencias=c(192, 201, 1412))
+library(ggplot2)
+ggplot(data=Enfoque, aes(x=Enfoque, y=Frecuencias)) +
+  geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
+  theme_bw()
+
 
 summary(veamos)
 veamos2 <- dfm(veamos, remove = stopwords("spanish"), remove_punct = TRUE, remove_numbers = TRUE)
 topfeatures(veamos2, 20)
 red <- as.matrix(veamos2)
 red_data <- data.frame(red)
+palabras <- data.frame(variable.names(red_data))
+library(tidyverse)
+Terminos <- red_data %>% select(matches("creativ|iniciat|persis|adaptabi|lidera|concienc|pensami|crític|problem|comunicac|colaborac|literat|investigac|ciencia|tecnolog|finanz|cívic"))
 
 toks <- veamos %>%
   tokens(remove_punct = TRUE, remove_numbers = TRUE) %>%
