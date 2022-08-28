@@ -34,6 +34,22 @@ palabras <- data.frame(variable.names(red_data))
 library(tidyverse)
 Terminos <- red_data %>% select(matches("creativ|iniciat|persis|adaptabi|lidera|concienc|pensami|crític|problem|comunicac|colaborac|literat|investigac|ciencia|tecnolog|finanz|cívic"))
 
+library(igraph)
+bn <- graph.incidence(Terminos)
+shapes <- c("circle","square")
+colors <- c("blue","red")
+#Azules son programas, Rojos son Enfoques
+plot(bn,vertex.color=colors[V(bn)$type+1],
+     vertex.shape=shapes[V(bn)$type+1],
+     vertex.size=2,
+     vertex.label.dist=1.2, vertex.label=NA)
+
+
+plot(bn, layout = layout_nicely,
+     vertex.color=c("blue","red")[V(bn)$type+1], 
+     vertex.size=3,
+     vertex.label=NA)
+
 toks <- veamos %>%
   tokens(remove_punct = TRUE, remove_numbers = TRUE) %>%
   tokens_tolower() %>%
