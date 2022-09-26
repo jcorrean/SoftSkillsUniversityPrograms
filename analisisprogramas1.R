@@ -9,20 +9,27 @@ textos <- readtext(listado$dir..)
 
 library(quanteda)
 veamos <- corpus(textos)
-dict <- dictionary(list(cualidades = c("creatividad", "iniciativa", "persistencia", "adaptabilidad", "curiosidad", "liderazgo", "conciencia"), 
-                        competencias = c("pensamiento crítico", "resolución de problemas", "comunicación", "colaboración"),
-                        alfabetizacion = c("literatura", "aritmética", "investigación", "ciencia", "tecnología", "finanzas", "alfabetización cultural", "alfabetización cívica")))
+dict <- dictionary(list(Auto.Conciencia = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
+                        Conciencia.Social = c("perspectiva", "empatía", "diversidad", "respeto"),
+                        Toma.de.Decisión = c("identificación", "situación", "análisis", "reflexi", "moral", "ético", "responsabilid"),
+                        Auto.gestión = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
+                        Relacionamiento = c("comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
 
 pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
 paved <- data.frame(pave)
+sum(paved$auto.conciencia)
+sum(paved$conciencia.social)
+sum(paved$toma.de.decisión)
+sum(paved$auto.gestión)
+sum(paved$relacionamiento)
 
-Enfoque <- data.frame(Enfoque=c("Cualidades", "Competencias", "Alfabetización"),
-                 Frecuencias=c(192, 201, 1412))
+Enfoque <- data.frame(Competencias=c("Auto-Conciencia", "Conciencia Social", "Toma de Decisión", "Auto-Gestión", "Relacionamiento"),
+                 Frecuencias=c(113, 119, 289, 122, 29))
 library(ggplot2)
-ggplot(data=Enfoque, aes(x=Enfoque, y=Frecuencias)) +
+ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
-  theme_bw()
+  theme_bw()+ xlab("Competencias Socio-Emocionales")
 
 
 summary(veamos)
@@ -32,7 +39,7 @@ red <- as.matrix(veamos2)
 red_data <- data.frame(red)
 palabras <- data.frame(variable.names(red_data))
 library(tidyverse)
-Terminos <- red_data %>% select(matches("creativ|iniciat|persis|adaptabi|lidera|concienc|pensami|crític|problem|comunicac|colaborac|literat|investigac|ciencia|tecnolog|finanz|cívic"))
+Terminos <- red_data %>% select(matches("emocio|percepc|fortalez|necesid|valo|eficacia|espiritualidad|perspectiva|empatía|diversidad|respeto|identificación|situación|análisis|reflexi|moral|ético|responsabilid|Impulso|control|auto-gestión|auto-motivaci|disciplina|meta|habilidad|comunicaci|compromiso|relaci|cooperac|negociaci|conflict|ayuda|búsqued"))
 
 library(igraph)
 bn <- graph.incidence(Terminos)
