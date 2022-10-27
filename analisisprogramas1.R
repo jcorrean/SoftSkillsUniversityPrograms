@@ -64,6 +64,10 @@ newcsv5 <- paved %>%
     Relacionamiento = sum(relacionamiento)
   )
 
+Habilidades <- list(newcsv, newcsv2, newcsv3, newcsv4, newcsv5)
+Habilidades <- as.data.frame(Habilidades)
+Habilidades[c(3, 5, 7, 9)] <- NULL
+
 library(ggplot2)
 ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
