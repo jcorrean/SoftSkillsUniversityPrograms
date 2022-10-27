@@ -78,7 +78,11 @@ ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) 
   theme_bw()+ xlab("Competencias Socio-Emocionales")
 
 ggplot(data=Habilidades, aes(fill = Programa, x=Habilidad, y=Frecuencia)) +
-  geom_bar(stat="identity", position = "dodge") + xlab("Competencias Socio-Emocionales")
+  geom_bar(stat="identity", position = "dodge") +
+  geom_text(aes(label=Frecuencia), vjust=-0.5, color="black", position=position_dodge(.9), size=3.5) +
+  xlab("Competencias Socio-Emocionales") +
+  ylab("Frecuencia de Términos Relacionados") + theme_bw()
+
 
 summary(veamos)
 veamos2 <- dfm(veamos, remove = stopwords("spanish"), remove_punct = TRUE, remove_numbers = TRUE)
