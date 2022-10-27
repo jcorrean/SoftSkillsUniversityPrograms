@@ -68,11 +68,17 @@ Habilidades <- list(newcsv, newcsv2, newcsv3, newcsv4, newcsv5)
 Habilidades <- as.data.frame(Habilidades)
 Habilidades[c(3, 5, 7, 9)] <- NULL
 
+Habilidades <- Habilidades %>% 
+  pivot_longer(c(`Autoconciencia`, `Conciencia_Social`, `TomaDecision`, `Autogestion`, `Relacionamiento`), names_to = "Habilidad", values_to = "Frecuencia")
+
+
 library(ggplot2)
 ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
   theme_bw()+ xlab("Competencias Socio-Emocionales")
 
+ggplot(data=Habilidades, aes(fill = Programa, x=Habilidad, y=Frecuencia)) +
+  geom_bar(stat="identity", position = "dodge") + xlab("Competencias Socio-Emocionales")
 
 summary(veamos)
 veamos2 <- dfm(veamos, remove = stopwords("spanish"), remove_punct = TRUE, remove_numbers = TRUE)
