@@ -21,8 +21,8 @@ dict <- dictionary(list(Auto.Conciencia = c("emoci", "auto-perción", "fortaleza
 
 pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
-paved <- data.frame(pave)
-paved$doc_id <- Muestra$Programa
+paved <- convert(pave, to = "data.frame")
+paved$doc_id <- Muestra$NOMBRE_DEL_PROGRAMA
 names(paved)[1] <- "Programa"
 
 sum(paved$auto.conciencia)
@@ -31,8 +31,8 @@ sum(paved$toma.de.decisión)
 sum(paved$auto.gestión)
 sum(paved$relacionamiento)
 
-Enfoque <- data.frame(Competencias=c("Auto-Conciencia", "Conciencia Social", "Toma de Decisión", "Auto-Gestión", "Relacionamiento"),
-                 Frecuencias=c(113, 119, 289, 122, 29))
+Enfoque <- data.frame(Competencias=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
+                 Frequency=c(127, 127, 315, 142, 32))
 library(dplyr)
 newcsv <- paved %>%
   group_by(Programa) %>%
@@ -67,7 +67,7 @@ newcsv5 <- paved %>%
 library(ggplot2)
 ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
-  theme_bw()+ xlab("Competencias Socio-Emocionales")
+  theme_bw()+ xlab("Socio-Emotional Skills")
 
 
 summary(veamos)
