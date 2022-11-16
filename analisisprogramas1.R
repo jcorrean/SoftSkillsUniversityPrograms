@@ -10,14 +10,14 @@ textos <- readtext(listado$dir..)
 library(quanteda)
 veamos <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(veamos, "Programa") <- Muestra$Programa
+docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 summary(veamos)
 
-dict <- dictionary(list(Auto.Conciencia = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
-                        Conciencia.Social = c("perspectiva", "empatía", "diversidad", "respeto"),
-                        Toma.de.Decisión = c("identificación", "situación", "análisis", "reflexi", "moral", "ético", "responsabilid"),
-                        Auto.gestión = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
-                        Relacionamiento = c("lider", "comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
+dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
+                        Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
+                        Decision_Making = c("identificación", "situación", "análisis", "reflexi", "moral", "ético", "responsabilid"),
+                        Self_Management = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
+                        Relationship_Management = c("lider", "comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
 
 pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
@@ -25,48 +25,48 @@ paved <- convert(pave, to = "data.frame")
 paved$doc_id <- Muestra$NOMBRE_DEL_PROGRAMA
 names(paved)[1] <- "Programa"
 
-sum(paved$auto.conciencia)
-sum(paved$conciencia.social)
-sum(paved$toma.de.decisión)
-sum(paved$auto.gestión)
-sum(paved$relacionamiento)
+sum(paved$self_awareness)
+sum(paved$social_awareness)
+sum(paved$decision_making)
+sum(paved$self_management)
+sum(paved$relationship_management)
 
-Enfoque <- data.frame(Competencias=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
+Focus <- data.frame(Soft_Skills=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
                  Frequency=c(127, 127, 315, 142, 32))
 library(dplyr)
 newcsv <- paved %>%
   group_by(Programa) %>%
   summarise(
-    Autoconciencia = sum(auto.conciencia)
+    self_awareness = sum(self_awareness)
   )
 
 newcsv2 <- paved %>%
   group_by(Programa) %>%
   summarise(
-    Conciencia_Social = sum(conciencia.social)
+    social_awareness = sum(social_awareness)
   )
 
 newcsv3 <- paved %>%
   group_by(Programa) %>%
   summarise(
-    TomaDecision = sum(toma.de.decisión)
+    decision_making = sum(decision_making)
   )
 
 newcsv4 <- paved %>%
   group_by(Programa) %>%
   summarise(
-    Autogestion = sum(auto.gestión)
+    self_management = sum(self_management)
   )
 
 newcsv5 <- paved %>%
   group_by(Programa) %>%
   summarise(
-    Relacionamiento = sum(relacionamiento)
+    relationship_management = sum(relationship_management)
   )
 
 library(ggplot2)
-ggplot(data=Enfoque, aes(x=reorder(Competencias, -Frecuencias), y=Frecuencias)) +
-  geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frecuencias), vjust=1.6, color="white", size=3.5)+
+ggplot(data=Focus, aes(x=reorder(Focus$Soft_Skills, -Frequency), y=Frequency)) +
+  geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frequency), vjust=1.6, color="white", size=3.5)+
   theme_bw()+ xlab("Socio-Emotional Skills")
 
 
