@@ -1,5 +1,5 @@
 library(readr)
-Muestra <- read_csv("~/Documents/GitHub/SoftSkillsUniversityPrograms/Muestra Analizada.csv")
+Muestra <- read_csv("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampledPrograms.csv")
 Muestra <- Muestra[1:9]
 Muestra <- na.omit(Muestra)
 table(Muestra$SECTOR)
