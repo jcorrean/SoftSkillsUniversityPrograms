@@ -65,7 +65,7 @@ newcsv5 <- paved %>%
   )
 
 library(ggplot2)
-ggplot(data=Focus, aes(x=reorder(Focus$Soft_Skills, -Frequency), y=Frequency)) +
+ggplot(data=Focus, aes(x=reorder(Soft_Skills, -Frequency), y=Frequency)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frequency), vjust=1.6, color="white", size=3.5)+
   theme_bw()+ xlab("Socio-Emotional Skills")
 
