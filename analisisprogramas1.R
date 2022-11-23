@@ -64,10 +64,24 @@ newcsv5 <- paved %>%
     relationship_management = sum(relationship_management)
   )
 
+Habilidades <- list(newcsv, newcsv2, newcsv3, newcsv4, newcsv5)
+Habilidades <- as.data.frame(Habilidades)
+Habilidades[c(3, 5, 7, 9)] <- NULL
+
+Habilidades <- Habilidades %>% 
+  pivot_longer(c(`Autoconciencia`, `Conciencia_Social`, `TomaDecision`, `Autogestion`, `Relacionamiento`), names_to = "Habilidad", values_to = "Frecuencia")
+
+
 library(ggplot2)
 ggplot(data=Focus, aes(x=reorder(Soft_Skills, -Frequency), y=Frequency)) +
   geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frequency), vjust=1.6, color="white", size=3.5)+
   theme_bw()+ xlab("Socio-Emotional Skills")
+
+ggplot(data=Habilidades, aes(fill = Programa, x=Habilidad, y=Frecuencia)) +
+  geom_bar(stat="identity", position = "dodge") +
+  geom_text(aes(label=Frecuencia), vjust=-0.5, color="black", position=position_dodge(.9), size=3.5) +
+  xlab("Competencias Socio-Emocionales") +
+  ylab("Frecuencia de Términos Relacionados") + theme_bw()
 
 
 summary(veamos)
