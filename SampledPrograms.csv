@@ -152,16 +152,16 @@ Ok,13,UNIVERSIDAD EAFIT,Activa,Privado,28-1,Especialización en Gerencia del Des
 ,15,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-5,Especializacion En Gerencia En Seguridad Y Salud En El Trabajo,Ok,,,,
 ,15,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-6,Especialización En Gerencia Financiera,Ok,,,,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA
 ,15,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-7,Especializacion En Gestion Ambiental,Ok,,,,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-8,Especializacion En Informatica Educativa,Ok,111-1,Especialización En Gerencia De Proyectos,Ok,FUNDACION UNIVERSITARIA COLOMBO GERMANA
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-9,Especialización En Pedagogía  Y Docencia,Ok,111-2,Especialización En Gerencia En Seguridad Y Salud Para El Trabajo,Ok,FUNDACION UNIVERSITARIA COLOMBO GERMANA
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-10,Especialización En Revisoría Fiscal Y Auditoría Forense,Ok,113-1,Especialización En Desarrollo De Negocios Digitales,Ok,UNIVERSITARIA VIRTUAL INTERNACIONAL
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-11,Maestría En Epidemiología,Ok,114-1,Especialización En Alta Gerencia,Ok,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-12,Maestría En Gerencia De Mercadeo Digital,Ok,114-2,Especialización En Dirección Y Gestión De Proyectos,Ok,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
-,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-13,Maestría En Innovación,Ok,114-3,Especialización En Gestión De La Seguridad Y Salud En El Trabajo,Ok,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
-,16,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-1,Especializacion En Analitica Y Big Data,Ok,114-4,Especialización En Gestión Humana,Ok,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
-,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-2,Especializacion En Ciberseguridad,Ok,114-6,Especialización En Neuropsicología Y Educación,Ok,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
-,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-3,Especialización En Desarrollo Integral De La Infancia Y La Adolescencia,Ok,117-1,Doctorado En Ciencias Económicas,Ok,Universidad Nacional de Colombia
-,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-4,Especialización En Gerencia De La Calidad En Salud,Ok,117-2,Maestría En Ingeniería De Sistemas Y Computación,Ok,Universidad Nacional de Colombia
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-8,Especializacion En Informatica Educativa,Ok,,,,FUNDACION UNIVERSITARIA COLOMBO GERMANA
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-9,Especialización En Pedagogía  Y Docencia,Ok,,,,FUNDACION UNIVERSITARIA COLOMBO GERMANA
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-10,Especialización En Revisoría Fiscal Y Auditoría Forense,Ok,,,,UNIVERSITARIA VIRTUAL INTERNACIONAL
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-11,Maestría En Epidemiología,Ok,,,,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-12,Maestría En Gerencia De Mercadeo Digital,Ok,,,,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
+,16,FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-13,Maestría En Innovación,Ok,,,,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
+,16,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-1,Especializacion En Analitica Y Big Data,Ok,,,,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
+,16,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-2,Especializacion En Ciberseguridad,Ok,,,,FUNDACION UNIVERSITARIA INTERNACIONAL DE LA RIOJA - UNIR
+,16,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-3,Especialización En Desarrollo Integral De La Infancia Y La Adolescencia,Ok,117-1,Doctorado En Ciencias Económicas,Ok,Universidad Nacional de Colombia
+,16,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-4,Especialización En Gerencia De La Calidad En Salud,Ok,117-2,Maestría En Ingeniería De Sistemas Y Computación,Ok,Universidad Nacional de Colombia
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-5,Especialización En Gerencia De La Seguridad Y Salud En El Trabajo,Ok,117-3,Especialización En Gobierno Electrónico,Ok,Universidad Nacional de Colombia
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-6,Especialización En Gerencia De Proyectos,Ok,117-4,Doctorado En Industria Y Organizaciones,Ok,Universidad Nacional de Colombia
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-8,Especialización En Gerencia Financiera,Ok,118-1,Doctorate In Business Administration,Ok,Colegio de Estudios Superiores de Administración
@@ -169,19 +169,19 @@ Ok,13,UNIVERSIDAD EAFIT,Activa,Privado,28-1,Especialización en Gerencia del Des
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-10,Especialización En Neuropsicología De La Educación,Ok,119-1,Doctorado En Estudios Sociales,Ok,Universidad del Rosario
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-11,Maestria En Ambientes Digitales Para La Educacion,Ok,119-2,Doctorado En Ciencias Naturales,Ok,Universidad del Rosario
 ,17,CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-12,Maestría En Educación,Ok,119-3,Doctorado En Investigación Clínica,Ok,Universidad del Rosario
-,18,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-1,Especialización En Estudios Bíblicos,Ok,,,,
-,18,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-3,Especialización En Gestion De Procesos Psicosociales,Ok,,,,
-,18,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-4,Especialización En Métodos Y Técnicas De Investigación En Ciencias Sociales,Ok,,,,
+,17,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-1,Especialización En Estudios Bíblicos,Ok,,,,
+,17,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-3,Especialización En Gestion De Procesos Psicosociales,Ok,,,,
+,17,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-4,Especialización En Métodos Y Técnicas De Investigación En Ciencias Sociales,Ok,,,,
 ,18,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-6,Especialización En Periodismo De Paz,Ok,,,,
 ,18,FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-7,Especializacion Gerencia  Financiera,Ok,,,,
-,18,,Activa,Oficial,,,,,,,
-,18,,Activa,Oficial,,,,,,,
-,18,,Activa,Oficial,,,,,,,
-,18,,Activa,Oficial,,,,,,,
-,18,,Activa,Oficial,,,,,,,
-,19,,Activa,Privado,,,,,,,
-,19,,,,,,,,,,
-,19,,,,,,,,,,
+,18,Fundación Universitaria Colombo-Germana,Activa,Privado,111-1,Especialización En Gerencia De Proyectos,Ok,,,,
+,18,Fundación Universitaria Colombo-Germana,Activa,Privado,111-2,Especialización En Gerencia En Seguridad Y Salud Para El Trabajo,Ok,,,,
+,18,Universitaria Virtual Internacional,Activa,Privado,113-1,Especialización En Desarrollo De Negocios Digitales,Ok,,,,
+,18,Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-1,Especialización En Alta Gerencia,Ok,,,,
+,18,Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-2,Especialización En Dirección Y Gestión De Proyectos,Ok,,,,
+,18,Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-3,Especialización En Gestión De La Seguridad Y Salud En El Trabajo,Ok,,,,
+,18,Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-4,Especialización En Gestión Humana,Ok,,,,
+,18,Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-6,Especialización En Neuropsicología Y Educación,Ok,,,,
 ,19,,,,,,,,,,
 ,19,,,,,,,,,,
 ,19,,,,,,,,,,
