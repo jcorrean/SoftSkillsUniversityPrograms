@@ -1,5 +1,13 @@
-setwd("/home/jc/Documents/Pilar")
+setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
 listado <- data.frame(dir())
+muestra <- data.frame(Muestra$codigoprograma)
+colnames(listado)[1]  <- "pave"
+colnames(muestra)[1]  <- "pave"
+
+library(arsenal)
+comparedf(muestra, listado)
+pavec <- summary(comparedf(muestra, listado))
+pavee <- as.data.frame(pavec$diffs.table)
 library(readtext)
 library(tm)
 DirSource()
