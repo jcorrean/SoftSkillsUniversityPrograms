@@ -1,204 +1,202 @@
-NOMBRE_INSTITUCIÓN,ESTADO_INSTITUCIÓN,SECTOR,codigoprograma,NOMBRE_DEL_PROGRAMA,Checked
-UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-1,Especialización En Pedagogia,Ok
-UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-2,Maestría En Estudios Contemporáneos En Enseñanza De La Biología,Ok
-UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-3,Doctorado En Educación,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-1,Especialización En Alta Gerencia De Empresas,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-2,Especialización En Didáctica De La Matemática Para La Educación Básica,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-3,Especialización En Gerencia De Empresas De Salud,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-4,Especialización En Gestión De Integridad Y Corrosión,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-5,Especialización En Pedagogía De La Lengua Castellana Y Literatura,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-6,Maestría En Didáctica De La Matemática,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-7,Maestría En Gestión De Integridad Y Corrosión,Ok
-UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-8,Maestría en Agroindustria Alimentaria e Innovación,Ok
-UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-1,Maestría En Educación Superior,Ok
-UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-2,Doctorado En Ciencias De La Computación,Ok
-UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-3,Especialización En Agroindustria,Ok
-UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-1,Especialización En Enseñanza De La Física,Ok
-UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-2,Especialización En Gestión Ambiental Local,Ok
-UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-3,Maestría En Educación,Ok
-UNIVERSIDAD SURCOLOMBIANA,Activa,Oficial,5-1,Maestria En Psicologia Ambiental,Ok
-UNIVERSIDAD MILITAR-NUEVA GRANADA,Activa,Oficial,6-1,Especialización En Alta Gerencia,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-1,Especialización En Evaluación Economica En Salud,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-2,Especialización En Extensión Rural,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-4,Especialización En Gestion De Activos,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-5,Especializacion Tecnologica En Regencia De Farmacia,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-6,Maestría En Educación,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-7,Maestria En Enseñanza De Las Matematicas,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-9,Maestria En Politicas Públicas Alimentarias Y Nutricionales,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-10,Maestría En Telesalud,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-11,Doctorado En Ingeniería,Ok
-UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-12,Doctorado En Física,Ok
-UNIVERSIDAD DEL VALLE,Activa,Oficial,11-2,Doctorado En Administración,Ok
-UNIVERSIDAD DEL VALLE,Activa,Oficial,11-3,Doctorado En Ciencias Quimica,Ok
-UNIVERSIDAD DEL VALLE,Activa,Oficial,11-4,Maestría En Economía Aplicada,Ok
-UNIVERSIDAD DEL VALLE,Activa,Oficial,11-5,Maestría En Estadística,Ok
-UNIVERSIDAD DEL VALLE,Activa,Oficial,11-6,Maestría En Psicología,Ok
-UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-1,Especialización En Didáctica Y Tic,Ok
-UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-2,Maestria En Enfermería,Ok
-UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-3,Maestría En Recursos Digitales Aplicados A La Educación,Ok
-UNIVERSIDAD DE NARIÑO,Activa,Oficial,14-1,Maestría En Educación Virtual,Ok
-UNIVERSIDAD DE NARIÑO,Activa,Oficial,14-2,Maestría En Estadística Aplicada,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-1,Especialización En Educación Para La Diversidad En La Niñez,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-2,Especialización En Finanzas,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-3,Especializacion En Gerencia De Instituciones Educativas,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-4,Especializacion En Gerencia De Proyectos,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-5,Maestría En Pedagogía De La Literatura,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-6,Maestría En Pedagogía Y Mediaciones Tecnológicas,Ok
-UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-7,Doctorado En Planificación Y Manejo Ambiental De Cuencas Hidrográficas,Ok
-UNIVERSIDAD FRANCISCO DE PAULA SANTANDER,Activa,Oficial,16-1,"Especialización En Educación, Emprendimiento Y Economía Solidaria",Ok
-UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-1,Maestría En Administración,Ok
-UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-2,Maestría En Ciencias Económicas Y Empresariales,Ok
-UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-3,Maestría En Educación,Ok
-UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-1,Especializacion En Docencia Universitaria,Ok
-UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-2,Especializacion En Gestion Y Legislacion Ambiental,Ok
-UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-3,Maestria En Argumentacion Juridica,Ok
-UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-4,Maestría En Escrituras Audiovisuales,Ok
-UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-5,Maestria En Produccion Audiovisual Creativa,Ok
-UNIVERSIDAD DE CUNDINAMARCA-UDEC,Activa,Oficial,19-1,Especialización En Gestión De Sistemas De Información Gerencial.,Ok
-UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-1,Maestría En Educación En Tecnología,Ok
-UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-3,Maestría En Telecomunicaciones Móviles,Ok
-UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-4,Doctorado En Estudios Sociales,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-1,Especialización En Derecho Matrimonial Canónico,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-3,Especializacion En Liderazgo Para La Gestion Social,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-4,Maestria En Educacion Para La Innovacion Y Las Ciudadanias,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-5,Maestria En Estudios Criticos De Las Migraciones Contemporaneas,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-6,Maestría En Estudios Culturales Latinoamericanos,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-7,Especialización En Gestión De Las Artes Y La Cultura,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-8,Maestría En Asesoría Familiar,Ok
-PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-9,Maestría En Ciencia De Datos,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-2,Especializacion En Gerencia De Empresas Agropecuarias,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-3,Especializacion En Gerencia De Instituciones De Seguridad Social En Salud,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-4,Especializacion En Gestion Integral De Cuencas Hidrograficas,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-5,Especializacion En Gestion Para El Desarrollo Empresarial,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-6,Especializacion En Patologia De La Construccion,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-7,Especialización En Pedagogía Para La Educación Superior,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-8,Maestría En Ambientes Bilingües De Aprendizaje,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-9,Maestría En Didáctica,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-10,Maestria En Educacion,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-11,Maestría En Gestión De Cuencas Hidrográficas,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-12,Maestría En Gestión Y Evaluación Educativa,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-14,Especializacion En Administracion Deportiva,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-15,Especializacion En Finanzas Publicas,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-16,Especializacion En Gerencia De La Internacionalizacion Empresarial,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-17,Especializacion En Interventoria Y Supervisión De La Construccion,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-19,Especialización En Negocios Globales E Innovación,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-20,Especialización en Revisoría Fiscal y Auditoría Externa ,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-21,Especializacion En Seguridad Social,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-22,Maestría En Dirección Y Gestión De Proyectos,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-23,Doctorado En Derecho Público,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-24,Especialización En Gerencia Estratégica De Costos,Ok
-UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-25,Doctorado En Psicología,Ok
-UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-2,Especialización En Sostenibilidad De Instituciones Culturales,Ok
-UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-3,Maestría En Estudios Transdisciplinarios En Salud,Ok
-UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-4,Maestría En Regulación Energética,Ok
-FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-1,Especialización En Derecho Del Medio Ambiente,Ok
-FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-2,Doctorado en Ingeniería,Ok
-FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-3,Doctorado en Modelado en Política y Gestión Pública,Ok
-UNIVERSIDAD CENTRAL,Activa,Privado,25-1,Especialización En Publicidad Digital,Ok
-UNIVERSIDAD CENTRAL,Activa,Privado,25-2,Maestría en Analítica de Datos,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-1,Especializacion En Comunicación Y Periodismo Digital,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-2,Especialización En Estrategia Gerencial Y Prospectiva,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-3,Especialización En Gerencia,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-4,Especializacion En Gerencia Publica,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-5,Especialización Procesos Textiles De Alto Valor,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-6,Maestria En Ciencias Naturales Y Matemática,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-7,Maestria En Comunicacion Digital,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-8,Maestria En Educacion,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-11,Maestria En Gestion Estratégica De La Información Y El Conocimiento,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-12,Maestria En Literatura,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-13,Maestria En Procesos De Aprendizaje Y Enseñanza De Segundas Lenguas,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-14,Maestria En Psicopedagogia,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-15,Maestría En Sostenibilidad,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-16,Especialización En Gerencia De Tecnologías De Información,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-17,Especialización En Gestión De La Sostenibilidad,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-18,Especialización En Gestión De Proyectos,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-19,Especializacion En Gestion Estrategica De La Comunicacion,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-20,Especialización En Preservación Y Conservación De Los Recursos Naturales,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-21,Especialización En Seguridad Informatica,Ok
-UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-27,Maestría En Innovación Social Y Territorio,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-1,Especialización En Gerencia Comercial,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-2,Especialización En Gerencia Estratégica,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-3,Especialización En Gestión Para El Desarrollo Humano En La Organización,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-4,Especializacion En Pedagogia E Investigacion En El Aula,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-5,Maestría En Asesoría Familiar Y Gestión De Programas Para La Familia,Ok
-UNIVERSIDAD DE LA SABANA,Activa,Privado,27-6,Maestría En Didáctica Del Inglés Para El Aprendizaje Autodirigido,Ok
-UNIVERSIDAD EAFIT,Activa,Privado,28-1,Especialización en Gerencia del Desarrollo Humano ,Ok
-UNIVERSIDAD EAFIT,Activa,Privado,28-2,Maestría En Desarrollo Humano Organizacional,Ok
-UNIVERSIDAD EAFIT,Activa,Privado,28-3,Maestría En Gerencia De Empresas Sociales Para La Innovación Social Y El Desarrollo Local,Ok
-UNIVERSIDAD EAFIT,Activa,Privado,28-4,Maestría En Gerencia De La Innovación Y El Conocimiento,Ok
-UNIVERSIDAD EAFIT,Activa,Privado,28-5,Maestría en Lectura y Escritura,Ok
-Universidad del Norte,Activa,Privado,29-1,Maestría en Educación Mediada por TIC,Ok
-Universidad del Norte,Activa,Privado,29-2,Maestría En Pedagogía Social E Intervención Educativa En Contextos Sociales,Ok
-Universidad del Rosario,Activa,Privado,30-1,Especialización en Educación para la Paz y Formación Ciudadana,Ok
-Universidad del Rosario,Activa,Privado,30-3,Especialización en Gerencia Integral de Servicio de Salud ,Ok
-Universidad del Rosario,Activa,Privado,30-4,Especialización en Gerencia y Gestión Cultural,Ok
-Universidad del Rosario,Activa,Privado,30-5,Especialización en Gobernanza y Desarrollo Territorial,Ok
-Universidad del Rosario,Activa,Privado,30-6,Especialización en Innovación Pedagógica,Ok
-Universidad del Rosario,Activa,Privado,30-7,Maestría en Educación para Profesionales de la Salud,Ok
-Universidad de América,Activa,Privado,31-1,Especialización en Gerencia de la Calidad,Ok
-UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-2,Especialización En Desarrollo Territorial Y Gestión Pública,Ok
-UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-3,Especialización En Gerencia De Negocios Internacionales,Ok
-UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-4,Especialización En Gestión De Proyectos Multimediales Para La Educación,Ok
-UNIVERSIDAD CATÓLICA DE COLOMBIA,Activa,Privado,33-1,Especialización en Sistema Penal Acusatorio,Ok
-UNIVERSIDAD MARIANA,Activa,Privado,34-1,Especializacion en Familia,Ok
-Universidad de Manizales,Activa,Privado,35-1,Especialización en Gerencia de Mercadeo y Ventas,Ok
-Universidad de Manizales,Activa,Privado,35-2,Especialización en Sistemas Integrados de Gestión,Ok
-Universidad de Manizales,Activa,Privado,35-3,Maestría en Desarrollo Sostenible y Medio Ambiente – Presencial,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-1,Especialización En Alta Gerencia,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-2,Especializacion En Auditoria En Salud,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-3,"Especialización En Derechos De Autor,  Propiedad Industrial Y Nuevas Tecnologías",Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-4,Especializacion En Epidemiologia,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-5,Especializacion En Gerencia En Seguridad Y Salud En El Trabajo,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-6,Especialización En Gerencia Financiera,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-7,Especializacion En Gestion Ambiental,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-8,Especializacion En Informatica Educativa,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-9,Especialización En Pedagogía  Y Docencia,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-10,Especialización En Revisoría Fiscal Y Auditoría Forense,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-11,Maestría En Epidemiología,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-12,Maestría En Gerencia De Mercadeo Digital,Ok
-FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-13,Maestría En Innovación,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-1,Especializacion En Analitica Y Big Data,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-2,Especializacion En Ciberseguridad,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-3,Especialización En Desarrollo Integral De La Infancia Y La Adolescencia,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-4,Especialización En Gerencia De La Calidad En Salud,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-5,Especialización En Gerencia De La Seguridad Y Salud En El Trabajo,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-6,Especialización En Gerencia De Proyectos,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-8,Especialización En Gerencia Financiera,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-9,Especializacion En Marketing Digital,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-10,Especialización En Neuropsicología De La Educación,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-11,Maestria En Ambientes Digitales Para La Educacion,Ok
-CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-12,Maestría En Educación,Ok
-FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-1,Especialización En Estudios Bíblicos,Ok
-FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-3,Especialización En Gestion De Procesos Psicosociales,Ok
-FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-4,Especialización En Métodos Y Técnicas De Investigación En Ciencias Sociales,Ok
-FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-6,Especialización En Periodismo De Paz,Ok
-FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-7,Especializacion Gerencia  Financiera,Ok
-Fundación Universitaria Colombo-Germana,Activa,Privado,111-1,Especialización En Gerencia De Proyectos,Ok
-Fundación Universitaria Colombo-Germana,Activa,Privado,111-2,Especialización En Gerencia En Seguridad Y Salud Para El Trabajo,Ok
-Universitaria Virtual Internacional,Activa,Privado,113-1,Especialización En Desarrollo De Negocios Digitales,Ok
-Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-1,Especialización En Alta Gerencia,Ok
-Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-2,Especialización En Dirección Y Gestión De Proyectos,Ok
-Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-3,Especialización En Gestión De La Seguridad Y Salud En El Trabajo,Ok
-Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-4,Especialización En Gestión Humana,Ok
-Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-6,Especialización En Neuropsicología Y Educación,Ok
-INSTITUCION UNIVERSITARIA ANTONIO JOSE CAMACHO,Activa,Privado,116-2,Especialización en Gestión de Contenidos Digitales ,Ok
-Universidad Nacional de Colombia,Activa,Privado,117-1,Doctorado En Ciencias Económicas,Ok
-Universidad Nacional de Colombia,Activa,Privado,117-2,Maestría En Ingeniería De Sistemas Y Computación,Ok
-Universidad Nacional de Colombia,Activa,Privado,117-3,Especialización En Gobierno Electrónico,Ok
-Universidad Nacional de Colombia,Activa,Privado,117-4,Doctorado En Industria Y Organizaciones,Ok
-Colegio de Estudios Superiores de Administración,Activa,Privado,118-1,Doctorate In Business Administration,Ok
-Colegio de Estudios Superiores de Administración,Activa,Privado,118-2,Master In Business Administration,Ok
-Universidad del Rosario,Activa,Privado,119-1,Doctorado En Estudios Sociales,Ok
-Universidad del Rosario,Activa,Privado,119-2,Doctorado En Ciencias Naturales,Ok
-Universidad del Rosario,Activa,Privado,119-3,Doctorado En Investigación Clínica,Ok
-Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-1,Doctorado En Ciencias Biológicas Y Ambientales,Ok
-Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-2,Maestría En Energías Renovables,Ok
-Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-3,Especialización En Bases De Datos,Ok
-Universidad del Quindío,Activa,Oficial,121-1,Doctorado En Ciencias ,Ok
-Universidad del Quindío,Activa,Oficial,121-2,Maestría En Agronegocios Del Café,Ok
-Universidad del Quindío,Activa,Oficial,121-3,Maestría En Procesos Agroindustriales,Ok
-Univesidad Militar Nueva Granada,Activa,Oficial,122-1,Doctorado En Ingeniería,Ok
-Univesidad Militar Nueva Granada,Activa,Oficial,122-2,Especialización En Alta Gerencia,Ok
-Univesidad Militar Nueva Granada,Activa,Oficial,122-3,Especialización En Alta Gerencia De Seguridad Y Defensa,Ok
-Univesidad Militar Nueva Granada,Activa,Oficial,122-4,Maestría En Ingeniería Civil,Ok
-Fundación Univesitaria Konrad Lorenz,Activa,Privado,123-1,Doctorado en Psicología,Ok
+NOMBRE_INSTITUCIÓN,ESTADO_INSTITUCIÓN,SECTOR,codigoprograma,,NOMBRE_DEL_PROGRAMA,Checked
+UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-1.docx,1-1.docx,Especialización En Pedagogia,Ok
+UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-2.docx,1-2.docx,Maestría En Estudios Contemporáneos En Enseñanza De La Biología,Ok
+UNIVERSIDAD PEDAGOGICA NACIONAL,Activa,Oficial,1-3.pdf,1-3.pdf,Doctorado En Educación,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-1.docx,2-1.docx,Especialización En Alta Gerencia De Empresas,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-2.docx,2-2.docx,Especialización En Didáctica De La Matemática Para La Educación Básica,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-3.docx,2-3.docx,Especialización En Gerencia De Empresas De Salud,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-4.docx,2-4.docx,Especialización En Gestión De Integridad Y Corrosión,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-5.docx,2-5.docx,Especialización En Pedagogía De La Lengua Castellana Y Literatura,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-6.docx,2-6.docx,Maestría En Didáctica De La Matemática,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-7.docx,2-7.docx,Maestría En Gestión De Integridad Y Corrosión,Ok
+UNIVERSIDAD PEDAGOGICA Y TECNOLOGICA DE COLOMBIA - UPTC,Activa,Oficial,2-8.docx,2-8.docx,Maestría en Agroindustria Alimentaria e Innovación,Ok
+UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-1.docx,3-1.docx,Maestría En Educación Superior,Ok
+UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-2.pdf,3-3.pdf,Doctorado En Ciencias De La Computación,Ok
+UNIVERSIDAD DEL CAUCA,Activa,Oficial,3-3.pdf,3.2.pdf,Especialización En Agroindustria,Ok
+UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-1.docx,4-1.docx,Especialización En Enseñanza De La Física,Ok
+UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-2.docx,4-2.docx,Especialización En Gestión Ambiental Local,Ok
+UNIVERSIDAD TECNOLOGICA DE PEREIRA - UTP,Activa,Oficial,4-3.docx,4-3.docx,Maestría En Educación,Ok
+UNIVERSIDAD SURCOLOMBIANA,Activa,Oficial,5-1.pdf,5-1.pdf,Maestria En Psicologia Ambiental,Ok
+UNIVERSIDAD MILITAR-NUEVA GRANADA,Activa,Oficial,6-1.pdf,6-1.pdf,Especialización En Alta Gerencia,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-1.docx,9-1.docx,Especialización En Evaluación Economica En Salud,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-2.docx,9-2.docx,Especialización En Extensión Rural,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-4.docx,9-4.docx,Especialización En Gestion De Activos,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-6.docx,9-6.docx,Maestría En Educación,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-7.docx,9-7.docx,Maestria En Enseñanza De Las Matematicas,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-9.docx,9-9.docx,Maestria En Politicas Públicas Alimentarias Y Nutricionales,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-10.docx,9-10.docx,Maestría En Telesalud,Ok
+UNIVERSIDAD DE ANTIOQUIA,Activa,Oficial,9-12.docx,9-12.docx,Doctorado En Física,Ok
+UNIVERSIDAD DEL VALLE,Activa,Oficial,11-2.pdf,11.2.pdf,Doctorado En Administración,Ok
+UNIVERSIDAD DEL VALLE,Activa,Oficial,11-3.pdf,11.3.pdf,Doctorado En Ciencias Quimica,Ok
+UNIVERSIDAD DEL VALLE,Activa,Oficial,11-4.pdf,11.4.pdf,Maestría En Economía Aplicada,Ok
+UNIVERSIDAD DEL VALLE,Activa,Oficial,11-5.pdf,11.5.pdf,Maestría En Estadística,Ok
+UNIVERSIDAD DEL VALLE,Activa,Oficial,11-6.pdf,11.6.pdf,Maestría En Psicología,Ok
+UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-1.docx,13-1.docx,Especialización En Didáctica Y Tic,Ok
+UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-2.docx,13-2.docx,Maestria En Enfermería,Ok
+UNIVERSIDAD DE CARTAGENA,Activa,Oficial,13-3.docx,13-3.docx,Maestría En Recursos Digitales Aplicados A La Educación,Ok
+UNIVERSIDAD DE NARIÑO,Activa,Oficial,14-1.docx,14-1.docx,Maestría En Educación Virtual,Ok
+UNIVERSIDAD DE NARIÑO,Activa,Oficial,14-2,14.2.pdf,Maestría En Estadística Aplicada,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-1,15-1.docx,Especialización En Educación Para La Diversidad En La Niñez,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-2,15-2.docx,Especialización En Finanzas,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-3,15-3.docx,Especializacion En Gerencia De Instituciones Educativas,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-4,15-4.docx,Especializacion En Gerencia De Proyectos,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-5,15-5.docx,Maestría En Pedagogía De La Literatura,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-6,15-6.docx,Maestría En Pedagogía Y Mediaciones Tecnológicas,Ok
+UNIVERSIDAD DEL TOLIMA,Activa,Oficial,15-7,15.7.pdf,Doctorado En Planificación Y Manejo Ambiental De Cuencas Hidrográficas,Ok
+UNIVERSIDAD FRANCISCO DE PAULA SANTANDER,Activa,Oficial,16-1,16-1.docx,"Especialización En Educación, Emprendimiento Y Economía Solidaria",Ok
+UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-1,17-1.docx,Maestría En Administración,Ok
+UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-2,17-2.docx,Maestría En Ciencias Económicas Y Empresariales,Ok
+UNIVERSIDAD DE PAMPLONA,Activa,Oficial,17-3,17-3.docx,Maestría En Educación,Ok
+UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-1,18-1.docx,Especializacion En Docencia Universitaria,Ok
+UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-2,18-2.docx,Especializacion En Gestion Y Legislacion Ambiental,Ok
+UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-3,18-3.docx,Maestria En Argumentacion Juridica,Ok
+UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-4,18-4.docx,Maestría En Escrituras Audiovisuales,Ok
+UNIVERSIDAD DEL MAGDALENA - UNIMAGDALENA,Activa,Oficial,18-5,18-5.docx,Maestria En Produccion Audiovisual Creativa,Ok
+UNIVERSIDAD DE CUNDINAMARCA-UDEC,Activa,Oficial,19-1,19-1.pdf,Especialización En Gestión De Sistemas De Información Gerencial.,Ok
+UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-1,20-1.docx,Maestría En Educación En Tecnología,Ok
+UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-3,20-3.docx,Maestría En Telecomunicaciones Móviles,Ok
+UNIVERSIDAD DISTRITAL-FRANCISCO JOSE DE CALDAS,Activa,Oficial,20-4,20-4.docx,Doctorado En Estudios Sociales,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-1,21-1.pdf,Especialización En Derecho Matrimonial Canónico,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-3,21-3.pdf,Especializacion En Liderazgo Para La Gestion Social,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-4,21-4.pdf,Maestria En Educacion Para La Innovacion Y Las Ciudadanias,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-5,21-5.pdf,Maestria En Estudios Criticos De Las Migraciones Contemporaneas,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-6,21-6.pdf,Maestría En Estudios Culturales Latinoamericanos,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-7,21-7.pdf,Especialización En Gestión De Las Artes Y La Cultura,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-8,21-8.docx,Maestría En Asesoría Familiar,Ok
+PONTIFICIA UNIVERSIDAD JAVERIANA,Activa,Privado,21-9,21-9.docx,Maestría En Ciencia De Datos,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-2,22-10.pdf,Especializacion En Gerencia De Empresas Agropecuarias,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-3,22-11.pdf,Especializacion En Gerencia De Instituciones De Seguridad Social En Salud,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-4,22-12.pdf,Especializacion En Gestion Integral De Cuencas Hidrograficas,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-5,22-14.pdf,Especializacion En Gestion Para El Desarrollo Empresarial,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-6,22-15.docx,Especializacion En Patologia De La Construccion,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-7,22-16.docx,Especialización En Pedagogía Para La Educación Superior,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-8,22-17.docx,Maestría En Ambientes Bilingües De Aprendizaje,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-9,22-19.docx,Maestría En Didáctica,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-10,22-2.pdf,Maestria En Educacion,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-11,22-20.docx,Maestría En Gestión De Cuencas Hidrográficas,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-12,22-21.docx,Maestría En Gestión Y Evaluación Educativa,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-14,22-22.docx,Especializacion En Administracion Deportiva,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-15,22-23.docx,Especializacion En Finanzas Publicas,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-16,22-24.docx,Especializacion En Gerencia De La Internacionalizacion Empresarial,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-17,22-25.pdf,Especializacion En Interventoria Y Supervisión De La Construccion,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-19,22-3.docx,Especialización En Negocios Globales E Innovación,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-20,22-4.pdf,Especialización en Revisoría Fiscal y Auditoría Externa ,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-21,22-5.pdf,Especializacion En Seguridad Social,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-22,22-6.pdf,Maestría En Dirección Y Gestión De Proyectos,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-23,22-7.pdf,Doctorado En Derecho Público,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-24,22-8.pdf,Especialización En Gerencia Estratégica De Costos,Ok
+UNIVERSIDAD SANTO TOMAS,Activa,Privado,22-25,22-9.pdf,Doctorado En Psicología,Ok
+UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-2,23-2.pdf,Especialización En Sostenibilidad De Instituciones Culturales,Ok
+UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-3,23-3.docx,Maestría En Estudios Transdisciplinarios En Salud,Ok
+UNIVERSIDAD EXTERNADO DE COLOMBIA,Activa,Privado,23-4,23-4.docx,Maestría En Regulación Energética,Ok
+FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-1,24-1.pdf,Especialización En Derecho Del Medio Ambiente,Ok
+FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-2,24-2.docx,Doctorado en Ingeniería,Ok
+FUNDACION UNIVERSIDAD DE BOGOTA - JORGE TADEO LOZANO,Activa,Privado,24-3,24-3.docx,Doctorado en Modelado en Política y Gestión Pública,Ok
+UNIVERSIDAD CENTRAL,Activa,Privado,25-1,25-1.docx,Especialización En Publicidad Digital,Ok
+UNIVERSIDAD CENTRAL,Activa,Privado,25-2,25-2.docx,Maestría en Analítica de Datos,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-1,26-1.docx,Especializacion En Comunicación Y Periodismo Digital,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-2,26-11.docx,Especialización En Estrategia Gerencial Y Prospectiva,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-3,26-12.docx,Especialización En Gerencia,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-4,26-13.docx,Especializacion En Gerencia Publica,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-5,26-14.docx,Especialización Procesos Textiles De Alto Valor,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-6,26-15.docx,Maestria En Ciencias Naturales Y Matemática,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-7,26-16.docx,Maestria En Comunicacion Digital,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-8,26-17.docx,Maestria En Educacion,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-11,26-18.docx,Maestria En Gestion Estratégica De La Información Y El Conocimiento,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-12,26-19.docx,Maestria En Literatura,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-13,26-2.docx,Maestria En Procesos De Aprendizaje Y Enseñanza De Segundas Lenguas,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-14,26-20.docx,Maestria En Psicopedagogia,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-15,26-21.docx,Maestría En Sostenibilidad,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-16,26-27.docx,Especialización En Gerencia De Tecnologías De Información,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-17,26-3.docx,Especialización En Gestión De La Sostenibilidad,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-18,26-4.docx,Especialización En Gestión De Proyectos,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-19,26-5.docx,Especializacion En Gestion Estrategica De La Comunicacion,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-20,26-6.docx,Especialización En Preservación Y Conservación De Los Recursos Naturales,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-21,26-7.docx,Especialización En Seguridad Informatica,Ok
+UNIVERSIDAD PONTIFICIA BOLIVARIANA,Activa,Privado,26-27,26-8.docx,Maestría En Innovación Social Y Territorio,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-1,27-1.docx,Especialización En Gerencia Comercial,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-2,27-2.pdf,Especialización En Gerencia Estratégica,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-3,27-3.docx,Especialización En Gestión Para El Desarrollo Humano En La Organización,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-4,27-4.docx,Especializacion En Pedagogia E Investigacion En El Aula,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-5,27-5.docx,Maestría En Asesoría Familiar Y Gestión De Programas Para La Familia,Ok
+UNIVERSIDAD DE LA SABANA,Activa,Privado,27-6,27-6.docx,Maestría En Didáctica Del Inglés Para El Aprendizaje Autodirigido,Ok
+UNIVERSIDAD EAFIT,Activa,Privado,28-1,28-1.docx,Especialización en Gerencia del Desarrollo Humano ,Ok
+UNIVERSIDAD EAFIT,Activa,Privado,28-2,28-2.docx,Maestría En Desarrollo Humano Organizacional,Ok
+UNIVERSIDAD EAFIT,Activa,Privado,28-3,28-3.docx,Maestría En Gerencia De Empresas Sociales Para La Innovación Social Y El Desarrollo Local,Ok
+UNIVERSIDAD EAFIT,Activa,Privado,28-4,28-4.docx,Maestría En Gerencia De La Innovación Y El Conocimiento,Ok
+UNIVERSIDAD EAFIT,Activa,Privado,28-5,28-5.docx,Maestría en Lectura y Escritura,Ok
+Universidad del Norte,Activa,Privado,29-1,29-1.docx,Maestría en Educación Mediada por TIC,Ok
+Universidad del Norte,Activa,Privado,29-2,29-2.docx,Maestría En Pedagogía Social E Intervención Educativa En Contextos Sociales,Ok
+Universidad del Rosario,Activa,Privado,30-1,30-1.docx,Especialización en Educación para la Paz y Formación Ciudadana,Ok
+Universidad del Rosario,Activa,Privado,30-3,30-3.docx,Especialización en Gerencia Integral de Servicio de Salud ,Ok
+Universidad del Rosario,Activa,Privado,30-4,30-4.docx,Especialización en Gerencia y Gestión Cultural,Ok
+Universidad del Rosario,Activa,Privado,30-5,30-5.docx,Especialización en Gobernanza y Desarrollo Territorial,Ok
+Universidad del Rosario,Activa,Privado,30-6,30-6.docx,Especialización en Innovación Pedagógica,Ok
+Universidad del Rosario,Activa,Privado,30-7,30-7.docx,Maestría en Educación para Profesionales de la Salud,Ok
+Universidad de América,Activa,Privado,31-1,31-1.docx,Especialización en Gerencia de la Calidad,Ok
+UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-2,32-2.docx,Especialización En Desarrollo Territorial Y Gestión Pública,Ok
+UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-3,32-3.docx,Especialización En Gerencia De Negocios Internacionales,Ok
+UNIVERSIDAD DE SAN BUENAVENTURA,Activa,Privado,32-4,32-4.docx,Especialización En Gestión De Proyectos Multimediales Para La Educación,Ok
+UNIVERSIDAD CATÓLICA DE COLOMBIA,Activa,Privado,33-1,33-1.docx,Especialización en Sistema Penal Acusatorio,Ok
+UNIVERSIDAD MARIANA,Activa,Privado,34-1,34-1.docx,Especializacion en Familia,Ok
+Universidad de Manizales,Activa,Privado,35-1,35-1.docx,Especialización en Gerencia de Mercadeo y Ventas,Ok
+Universidad de Manizales,Activa,Privado,35-2,35-2.docx,Especialización en Sistemas Integrados de Gestión,Ok
+Universidad de Manizales,Activa,Privado,35-3,35-3.docx,Maestría en Desarrollo Sostenible y Medio Ambiente – Presencial,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-1,75-1.docx,Especialización En Alta Gerencia,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-2,75-2.docx,Especializacion En Auditoria En Salud,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-3,75-3.pdf,"Especialización En Derechos De Autor,  Propiedad Industrial Y Nuevas Tecnologías",Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-4,75-4.pdf,Especializacion En Epidemiologia,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-5,75-5.docx,Especializacion En Gerencia En Seguridad Y Salud En El Trabajo,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-6,75-6.pdf,Especialización En Gerencia Financiera,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-7,75-7.pdf,Especializacion En Gestion Ambiental,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-8,75-8.docx,Especializacion En Informatica Educativa,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-9,75-9.pdf,Especialización En Pedagogía  Y Docencia,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-10,75-10.pdf,Especialización En Revisoría Fiscal Y Auditoría Forense,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-11,75-11.pdf,Maestría En Epidemiología,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-12,75-12.docx,Maestría En Gerencia De Mercadeo Digital,Ok
+FUNDACION UNIVERSITARIA DEL AREA ANDINA,Activa,Privado,75-13,75-13.pdf,Maestría En Innovación,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-1,85-1.pdf,Especializacion En Analitica Y Big Data,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-2,85-2.pdf,Especializacion En Ciberseguridad,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-3,85-3.pdf,Especialización En Desarrollo Integral De La Infancia Y La Adolescencia,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-4,85-4.pdf,Especialización En Gerencia De La Calidad En Salud,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-5,85-5.pdf,Especialización En Gerencia De La Seguridad Y Salud En El Trabajo,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-6,85-6.pdf,Especialización En Gerencia De Proyectos,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-8,85-8.pdf,Especialización En Gerencia Financiera,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-9,85-9.pdf,Especializacion En Marketing Digital,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-10,85-10.pdf,Especialización En Neuropsicología De La Educación,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-11,85-11.pdf,Maestria En Ambientes Digitales Para La Educacion,Ok
+CORPORACION UNIVERSITARIA IBEROAMERICANA,Activa,Privado,85-12,85-12.pdf,Maestría En Educación,Ok
+FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-1,109-1.pdf,Especialización En Estudios Bíblicos,Ok
+FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-3,109-3.pdf,Especialización En Gestion De Procesos Psicosociales,Ok
+FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-4,109-4.pdf,Especialización En Métodos Y Técnicas De Investigación En Ciencias Sociales,Ok
+FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-6,109-6.pdf,Especialización En Periodismo De Paz,Ok
+FUNDACION UNIVERSITARIA CLARETIANA - UNICLARETIANA,Activa,Privado,109-7,109-7.pdf,Especializacion Gerencia  Financiera,Ok
+Fundación Universitaria Colombo-Germana,Activa,Privado,111-1,111-1.pdf,Especialización En Gerencia De Proyectos,Ok
+Fundación Universitaria Colombo-Germana,Activa,Privado,111-2,111-2.pdf,Especialización En Gerencia En Seguridad Y Salud Para El Trabajo,Ok
+Universitaria Virtual Internacional,Activa,Privado,113-1,113-1.pdf,Especialización En Desarrollo De Negocios Digitales,Ok
+Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-1,114-1.pdf,Especialización En Alta Gerencia,Ok
+Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-2,114-2.pdf,Especialización En Dirección Y Gestión De Proyectos,Ok
+Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-3,114-3.pdf,Especialización En Gestión De La Seguridad Y Salud En El Trabajo,Ok
+Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-4,114-4.pdf,Especialización En Gestión Humana,Ok
+Fundación Universitaria Internacional de La Rioja,Activa,Privado,114-6,114-6.pdf,Especialización En Neuropsicología Y Educación,Ok
+INSTITUCION UNIVERSITARIA ANTONIO JOSE CAMACHO,Activa,Privado,116-2,116-2.docx,Especialización en Gestión de Contenidos Digitales ,Ok
+Universidad Nacional de Colombia,Activa,Privado,117-1,117-1.pdf,Doctorado En Ciencias Económicas,Ok
+Universidad Nacional de Colombia,Activa,Privado,117-2,117-2.pdf,Maestría En Ingeniería De Sistemas Y Computación,Ok
+Universidad Nacional de Colombia,Activa,Privado,117-3,117-3.pdf,Especialización En Gobierno Electrónico,Ok
+Universidad Nacional de Colombia,Activa,Privado,117-4,117-4.pdf,Doctorado En Industria Y Organizaciones,Ok
+Colegio de Estudios Superiores de Administración,Activa,Privado,118-1,118-1.pdf,Doctorate In Business Administration,Ok
+Colegio de Estudios Superiores de Administración,Activa,Privado,118-2,118-2.pdf,Master In Business Administration,Ok
+Universidad del Rosario,Activa,Privado,119-1,119-1.pdf,Doctorado En Estudios Sociales,Ok
+Universidad del Rosario,Activa,Privado,119-2,119-2.pdf,Doctorado En Ciencias Naturales,Ok
+Universidad del Rosario,Activa,Privado,119-3,119-3.pdf,Doctorado En Investigación Clínica,Ok
+Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-1,120-1.pdf,Doctorado En Ciencias Biológicas Y Ambientales,Ok
+Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-2,120-2.pdf,Maestría En Energías Renovables,Ok
+Universidad Pedagógica y Tecnológica de Colombia,Activa,Oficial,120-3,120-3.pdf,Especialización En Bases De Datos,Ok
+Universidad del Quindío,Activa,Oficial,121-1,121-1.pdf,Doctorado En Ciencias ,Ok
+Universidad del Quindío,Activa,Oficial,121-2,121-2.pdf,Maestría En Agronegocios Del Café,Ok
+Universidad del Quindío,Activa,Oficial,121-3,121-3.docx,Maestría En Procesos Agroindustriales,Ok
+Univesidad Militar Nueva Granada,Activa,Oficial,122-1,122-1.pdf,Doctorado En Ingeniería,Ok
+Univesidad Militar Nueva Granada,Activa,Oficial,122-2,122-2.pdf,Especialización En Alta Gerencia,Ok
+Univesidad Militar Nueva Granada,Activa,Oficial,122-3,122-3.pdf,Especialización En Alta Gerencia De Seguridad Y Defensa,Ok
+Univesidad Militar Nueva Granada,Activa,Oficial,122-4,122-4.pdf,Maestría En Ingeniería Civil,Ok
+Fundación Univesitaria Konrad Lorenz,Activa,Privado,123-1,123-1.docx,Doctorado en Psicología,Ok
