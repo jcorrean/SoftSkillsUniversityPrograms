@@ -1,13 +1,5 @@
 setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
 listado <- data.frame(dir())
-muestra <- data.frame(Muestra$codigoprograma)
-colnames(listado)[1]  <- "pave"
-colnames(muestra)[1]  <- "pave"
-
-library(arsenal)
-comparedf(muestra, listado)
-pavec <- summary(comparedf(muestra, listado))
-pavee <- as.data.frame(pavec$diffs.table)
 library(readtext)
 library(tm)
 DirSource()
@@ -27,6 +19,7 @@ dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza"
                         Self_Management = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
                         Relationship_Management = c("lider", "comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
 
+pavet <- tokens(veamos)
 pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
 paved <- convert(pave, to = "data.frame")
@@ -40,7 +33,7 @@ sum(paved$self_management)
 sum(paved$relationship_management)
 
 Focus <- data.frame(Soft_Skills=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
-                 Frequency=c(127, 127, 315, 142, 32))
+                 Frequency=c(107, 141, 195, 123, 36))
 library(dplyr)
 newcsv <- paved %>%
   group_by(Programa) %>%
