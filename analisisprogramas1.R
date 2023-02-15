@@ -12,6 +12,7 @@ veamos <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 summary(veamos)
+aja <- data.frame(summary(veamos, n = 201))
 
 dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
@@ -20,6 +21,7 @@ dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza"
                         Relationship_Management = c("lider", "comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
 
 pavet <- tokens(veamos)
+class(pavet)
 pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
 pave
 paved <- convert(pave, to = "data.frame")
@@ -33,7 +35,11 @@ sum(paved$self_management)
 sum(paved$relationship_management)
 
 Focus <- data.frame(Soft_Skills=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
-                 Frequency=c(107, 141, 195, 123, 36))
+                 Frequency=c(sum(paved$self_awareness),
+                             sum(paved$social_awareness),
+                             sum(paved$decision_making),
+                             sum(paved$self_management),
+                             sum(paved$relationship_management)))
 library(dplyr)
 newcsv <- paved %>%
   group_by(Programa) %>%
@@ -73,8 +79,17 @@ ggplot(data=Focus, aes(x=reorder(Soft_Skills, -Frequency), y=Frequency)) +
 
 summary(veamos)
 veamos2 <- dfm(veamos, remove = stopwords("spanish"), remove_punct = TRUE, remove_numbers = TRUE)
-
+class(veamos2)
 topfeatures(veamos2, 20)
+veamos3 <- dfm_remove(veamos2, c("formación", "investigación", 
+                                 "gestión", "universidad", "proyectos",
+                                 "maestría", "especialización", 
+                                 "doctorado", "educación", "programa",
+                                 "procesos", "profesionales", "salud",
+                                 "profesional", "créditos", "estudios",
+                                 "nacional", "nivel", "virtual", "perfil",
+                                 "internacional", "i"))
+topfeatures(veamos3, 20)
 red <- as.matrix(veamos2)
 red_data <- data.frame(red)
 palabras <- data.frame(variable.names(red_data))
