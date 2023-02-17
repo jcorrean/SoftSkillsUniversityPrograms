@@ -3,6 +3,6 @@ Muestra <- read_csv("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampledProg
 Muestra <- na.omit(Muestra)
 table(Muestra$SECTOR)
 library(tidyverse)
-Muestra <- mutate(Muestra, Programa = ifelse(grepl("ESPECIALIZ", NOMBRE_DEL_PROGRAMA), "Especialización",
-                                      ifelse(grepl("MAESTR", NOMBRE_DEL_PROGRAMA), "Maestría", "Doctorado")))
+Muestra <- mutate(Muestra, Programa = ifelse(grepl("Especializac", NOMBRE_DEL_PROGRAMA), "Especialización",
+                                      ifelse(grepl("Maestr", NOMBRE_DEL_PROGRAMA), "Maestría", "Doctorado")))
 table(Muestra$Programa)
