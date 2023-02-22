@@ -12,7 +12,7 @@ veamos <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 summary(veamos)
-aja <- data.frame(summary(veamos, n = 201))
+aja <- data.frame(summary(veamos, n = length(veamos)))
 
 dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
