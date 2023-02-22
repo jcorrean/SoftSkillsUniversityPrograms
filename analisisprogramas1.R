@@ -95,7 +95,7 @@ red_data <- data.frame(red)
 palabras <- data.frame(variable.names(red_data))
  
 library(quanteda.textstats)
-freq_weight <- textstat_frequency(veamos2, n = 20)
+freq_weight <- textstat_frequency(veamos3, n = 20)
 freq_weight <- freq_weight %>% filter(!row_number() %in% c(1, 2, 4, 6, 7, 9, 12, 13, 15, 17, 18, 20))
 
 
