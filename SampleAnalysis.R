@@ -9,8 +9,8 @@ table(Muestra$Programa)
 institution <- data.frame(table(Muestra$NOMBRE_INSTITUCIÓN))
 Sector <- data.frame(table(Muestra$SECTOR))
 
-Officials <- data.frame(subset(Muestra, Muestra$SECTOR == "Oficial"))
+Officials <- data.frame(subset(Muestra, Muestra$SECTOR == "Official"))
 LevelsOfficials <- data.frame(table(Officials$Programa))
-Private <- data.frame(subset(Muestra, Muestra$SECTOR == "Privado"))
+Private <- data.frame(subset(Muestra, Muestra$SECTOR == "Private"))
 LevelsPrivate <- data.frame(table(Private$Programa))
 
