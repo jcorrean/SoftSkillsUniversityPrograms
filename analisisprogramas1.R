@@ -110,19 +110,24 @@ ggplot(data = freq_weight, aes(x = nrow(freq_weight):1, y = frequency)) +
 library(tidyverse)
 Terminos <- red_data %>% select(matches("emocio|percepc|fortalez|necesid|valo|eficacia|espiritualidad|perspectiva|empatía|diversidad|respeto|identificación|situación|análisis|reflexi|moral|ético|responsabilid|Impulso|control|auto-gestión|auto-motivaci|disciplina|meta|habilidad|comunicaci|compromiso|relaci|cooperac|negociaci|conflict|ayuda|búsqued"))
 int <- as.matrix(Terminos)
+skills <- as.matrix(paved)
 
 library(igraph)
-
-bn <- graph.incidence(int)
+bn <- graph.incidence(skills)
 summary(bn)
 shapes <- c("circle","square")
-colors <- c("blue","red")
-#Azules son programas, Rojos son Enfoques
+colors <- c("lightgreen","red")
+#Verdes son programas, Rojos son Enfoques
 plot(bn,vertex.color=c("lightgreen","red")[V(bn)$type+1],
      vertex.shape=shapes[V(bn)$type+1],
      vertex.size=2,
      vertex.label.dist=1.2, vertex.label=NA)
+word_degrees <- as.matrix(degree(bn, mode = "in"))
+communities <- cluster_edge_betweenness(bn)
 
+# Plot the bipartite graph with the communities colored
+plot(bn, vertex.color = communities$membership, 
+     vertex.size=4)
 
 plot(bn, layout = layout_randomly,
      vertex.color=c("lightgreen","red")[V(bn)$type+1], 
