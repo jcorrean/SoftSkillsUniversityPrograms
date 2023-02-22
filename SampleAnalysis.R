@@ -13,3 +13,4 @@ Officials <- data.frame(subset(Muestra, Muestra$SECTOR == "Oficial"))
 LevelsOfficials <- data.frame(table(Officials$Programa))
 Private <- data.frame(subset(Muestra, Muestra$SECTOR == "Privado"))
 LevelsPrivate <- data.frame(table(Private$Programa))
+
