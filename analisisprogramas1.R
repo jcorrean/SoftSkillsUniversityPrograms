@@ -88,8 +88,13 @@ plot(bn2,
   
 summary(bn2)
 hum <- data.frame(degree(bn2))
-
-
+degree_distribution(bn2)
+ecount(bn2)
+edge.betweenness(bn2)
+edge.connectivity(bn2)
+edge.connectivity(bn2)
+SN <- as.matrix(get.adjacency(bn2))
+SN1 <- as.data.frame(SN)
 Skills <- as.data.frame(get.incidence(bn2))
 
 
