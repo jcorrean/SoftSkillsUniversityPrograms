@@ -88,6 +88,8 @@ plot(bn2,
   
 summary(bn2)
 hum <- data.frame(degree(bn2))
+
+
 Skills <- as.data.frame(get.incidence(bn2))
 
 
