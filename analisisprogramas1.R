@@ -52,6 +52,19 @@ fomentar <- data.frame(kwic(Textos, pattern = "fomentar"))
 interactuar <- data.frame(kwic(Textos, pattern = "interactuar"))
 identificar <- data.frame(kwic(Textos, pattern = "identificar"))
 competir <- data.frame(kwic(Textos, pattern = "competir"))
+manifestar <- data.frame(kwic(Textos, pattern = "manifestar"))
+responsable <- data.frame(kwic(Textos, pattern = "responsable"))
+evaluar <- data.frame(kwic(Textos, pattern = "evaluar"))
+
+rm(aja, institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
+
+ls()
+TODAS <- rbind(acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
+empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
+interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
+resolver, respetar, responsable, tolerar)
+
 
 dict <- dictionary(list(Self_Awareness = c("emoci", "auto-percepción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
