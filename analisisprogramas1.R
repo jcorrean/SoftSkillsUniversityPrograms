@@ -13,6 +13,33 @@ source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 summary(veamos)
 aja <- data.frame(summary(veamos, n = length(veamos)))
+Textos <- tokens(veamos)
+Textos
+
+comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
+liderar <- data.frame(kwic(Textos, pattern = "liderar"))
+resolver <- data.frame(kwic(Textos, pattern = "resolver"))
+comprometer <- data.frame(kwic(Textos, pattern = "comprometer"))
+comprometerse <- data.frame(kwic(Textos, pattern = "comprometerse"))
+gestionar <- data.frame(kwic(Textos, pattern = "gestionar"))
+reflexionar <- data.frame(kwic(Textos, pattern = "reflexionar"))
+controlar <- data.frame(kwic(Textos, pattern = "controlar"))
+etico <- data.frame(kwic(Textos, pattern = "ético"))
+tolerar <- data.frame(kwic(Textos, pattern = "tolerar"))
+argumentar <- data.frame(kwic(Textos, pattern = "argumentar"))
+conflicto <- data.frame(kwic(Textos, pattern = "conflictos"))
+negociar <- data.frame(kwic(Textos, pattern = "negociar"))
+comprender <- data.frame(kwic(Textos, pattern = "comprender"))
+equipo <- data.frame(kwic(Textos, pattern = "equipos"))
+planificar <- data.frame(kwic(Textos, pattern = "planificar"))
+generar <- data.frame(kwic(Textos, pattern = "generar"))
+empatia <- data.frame(kwic(Textos, pattern = "empatía"))
+compartir <- data.frame(kwic(Textos, pattern = "compartir"))
+analizar <- data.frame(kwic(Textos, pattern = "analizar"))
+reconocer <- data.frame(kwic(Textos, pattern = "reconocer"))
+orientar <- data.frame(kwic(Textos, pattern = "orientar"))
+respetar <- data.frame(kwic(Textos, pattern = "respetar"))
+
 
 dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
@@ -88,7 +115,7 @@ veamos3 <- dfm_remove(veamos2, c("formación", "investigación",
                                  "procesos", "profesionales", "salud",
                                  "profesional", "créditos", "estudios",
                                  "nacional", "nivel", "virtual", "perfil",
-                                 "internacional", "i"))
+                                 "internacional", "i", "través", "egresado", "áreas"))
 topfeatures(veamos3, 20)
 red <- as.matrix(veamos2)
 red_data <- data.frame(red)
