@@ -39,9 +39,21 @@ analizar <- data.frame(kwic(Textos, pattern = "analizar"))
 reconocer <- data.frame(kwic(Textos, pattern = "reconocer"))
 orientar <- data.frame(kwic(Textos, pattern = "orientar"))
 respetar <- data.frame(kwic(Textos, pattern = "respetar"))
+motivar <- data.frame(kwic(Textos, pattern = "motivar"))
+cooperar <- data.frame(kwic(Textos, pattern = "cooperar"))
+fortalecer <- data.frame(kwic(Textos, pattern = "fortalecer"))
+impulsar <- data.frame(kwic(Textos, pattern = "impulsar"))
+acercar <- data.frame(kwic(Textos, pattern = "acercar"))
+ayudar <- data.frame(kwic(Textos, pattern = "ayudar"))
+cambiar <- data.frame(kwic(Textos, pattern = "cambiar"))
+apreciar <- data.frame(kwic(Textos, pattern = "apreciar"))
+dirigir <- data.frame(kwic(Textos, pattern = "dirigir"))
+fomentar <- data.frame(kwic(Textos, pattern = "fomentar"))
+interactuar <- data.frame(kwic(Textos, pattern = "interactuar"))
+identificar <- data.frame(kwic(Textos, pattern = "identificar"))
+competir <- data.frame(kwic(Textos, pattern = "competir"))
 
-
-dict <- dictionary(list(Self_Awareness = c("emoci", "auto-perción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
+dict <- dictionary(list(Self_Awareness = c("emoci", "auto-percepción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
                         Decision_Making = c("identificación", "situación", "análisis", "reflexi", "moral", "ético", "responsabilid"),
                         Self_Management = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
