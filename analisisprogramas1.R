@@ -14,6 +14,7 @@ docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 summary(veamos)
 aja <- data.frame(summary(veamos, n = length(veamos)))
 Textos <- tokens(veamos)
+Textos <- tokens_tolower(Textos)
 Textos
 
 comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
@@ -55,11 +56,12 @@ competir <- data.frame(kwic(Textos, pattern = "competir"))
 manifestar <- data.frame(kwic(Textos, pattern = "manifestar"))
 responsable <- data.frame(kwic(Textos, pattern = "responsable"))
 evaluar <- data.frame(kwic(Textos, pattern = "evaluar"))
+innovar <- data.frame(kwic(Textos, pattern = "innovar"))
 
 rm(aja, institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
 
 
-TODAS <- rbind(acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+TODAS <- rbind(innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
 comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
 empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
 interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
@@ -67,7 +69,31 @@ resolver, respetar, responsable, tolerar)
 
 rm(list=setdiff(ls(), "TODAS"))
 
+Network <- TODAS[,c(1,5)]
+NetworkU <- unique(Network[ , c('docname','keyword') ] )
 
+library(igraph)
+bn2 <- graph.data.frame(NetworkU,directed=FALSE)
+bipartite.mapping(bn2)
+V(bn2)$type <- bipartite_mapping(bn2)$type
+V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
+V(bn2)$shape <- ifelse(V(bn2)$type, "circle", "square")
+#V(bn2)$label.cex <- ifelse(V(bn2)$type, 0.8, 1)
+V(bn2)$size <- 3.5
+E(bn2)$color <- "grey"
+plot(bn2, 
+     vertex.label = NA, 
+     layout = layout_components, 
+     main = "")
+  
+summary(bn2)
+hum <- data.frame(degree(bn2))
+Skills <- as.data.frame(get.incidence(bn2))
+
+
+library(igraph)
+bn <- graph.incidence(Network)
+bn
 
 dict <- dictionary(list(Self_Awareness = c("emoci", "auto-percepción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
                         Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
