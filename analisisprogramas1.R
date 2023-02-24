@@ -6,6 +6,8 @@ DirSource()
 # Get the data directory from readtext
 DATA_DIR <- system.file("extdata/", package = "readtext")
 textos <- readtext(listado$dir..)
+textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
+
 
 library(quanteda)
 veamos <- corpus(textos)
@@ -71,6 +73,7 @@ rm(list=setdiff(ls(), "TODAS"))
 
 Network <- TODAS[,c(1,5)]
 NetworkU <- unique(Network[ , c('docname','keyword') ] )
+#NU <- Network[!duplicated(Network[c(1,2)]),]
 
 library(igraph)
 bn2 <- graph.data.frame(NetworkU,directed=FALSE)
