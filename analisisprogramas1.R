@@ -20,6 +20,7 @@ Textos <- tokens_tolower(Textos)
 Textos
 
 comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
+crear <- data.frame(kwic(Textos, pattern = "crear"))
 liderar <- data.frame(kwic(Textos, pattern = "liderar"))
 resolver <- data.frame(kwic(Textos, pattern = "resolver"))
 comprometer <- data.frame(kwic(Textos, pattern = "comprometer"))
@@ -63,7 +64,7 @@ innovar <- data.frame(kwic(Textos, pattern = "innovar"))
 rm(aja, institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
 
 
-TODAS <- rbind(innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+TODAS <- rbind(crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
 comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
 empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
 interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
@@ -73,6 +74,9 @@ rm(list=setdiff(ls(), "TODAS"))
 
 Network <- TODAS[,c(1,5)]
 NetworkU <- unique(Network[ , c('docname','keyword') ] )
+table(NetworkU$keyword)
+verbos <- data.frame(table(NetworkU$keyword))
+write.csv(verbos, file="verbos.csv")
 #NU <- Network[!duplicated(Network[c(1,2)]),]
 
 library(igraph)
@@ -92,8 +96,12 @@ plot(bn2,
 summary(bn2)
 hum <- data.frame(degree(bn2))
 degree_distribution(bn2)
-ecount(bn2)
+hist(degree_distribution(bn2))
+ecount(bn2) #size of the graph (number of edges)
 edge.betweenness(bn2)
+hist(edge.betweenness(bn2))
+EB <- data.frame(edge.betweenness(bn2))
+
 edge.connectivity(bn2)
 edge.connectivity(bn2)
 SN <- as.matrix(get.adjacency(bn2))
