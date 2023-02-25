@@ -97,6 +97,17 @@ V(bn2)$name[1:10]
 V(bn2)$type[1:10]
 V(bn2)$color[1:10]
 V(bn2)$shape[1:10]
+
+table(degree(bn2,v=V(bn2)[type==FALSE]))
+mean(degree(bn2,v=V(bn2)[type==FALSE]))
+
+V(bn2)$deg <- degree(bn2)
+V(bn2)[type==FALSE & deg > 4]$name
+
+RelevantPrograms <- data.frame(cbind(
+  Program = V(bn2)[type==FALSE & deg > 4]$name,
+  Skills = V(bn2)[type==FALSE & deg > 4]$deg))
+
   
 summary(bn2)
 hum <- data.frame(degree(bn2))
