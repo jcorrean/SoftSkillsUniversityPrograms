@@ -76,7 +76,7 @@ Network <- TODAS[,c(1,5)]
 NetworkU <- unique(Network[ , c('docname','keyword') ] )
 table(NetworkU$keyword)
 verbos <- data.frame(table(NetworkU$keyword))
-write.csv(verbos, file="verbos.csv")
+#write.csv(verbos, file="verbos.csv")
 #NU <- Network[!duplicated(Network[c(1,2)]),]
 
 library(igraph)
