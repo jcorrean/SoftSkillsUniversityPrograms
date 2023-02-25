@@ -92,6 +92,11 @@ plot(bn2,
      vertex.label = NA, 
      layout = layout_components, 
      main = "")
+summary(bn2)
+V(bn2)$name[1:10]
+V(bn2)$type[1:10]
+V(bn2)$color[1:10]
+V(bn2)$shape[1:10]
   
 summary(bn2)
 hum <- data.frame(degree(bn2))
