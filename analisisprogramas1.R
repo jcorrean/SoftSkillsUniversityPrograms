@@ -109,9 +109,16 @@ RelevantPrograms <- data.frame(cbind(
   Skills = V(bn2)[type==FALSE & deg > 4]$deg))
 
 bn2.pr <- bipartite.projection(bn2)
-V(bn2.pr$proj1)$name
-V(bn2.pr$proj2)$name
-  
+Programs <- bn2.pr$proj1
+Terms <- bn2.pr$proj2
+
+
+
+graph.density(Programs)
+graph.density(Terms)
+get.adjacency(Programs)  
+
+
 summary(bn2)
 hum <- data.frame(degree(bn2))
 degree_distribution(bn2)
