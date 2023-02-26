@@ -94,7 +94,7 @@ plot(bn2,
      main = "")
 summary(bn2)
 V(bn2)$name[1:10]
-V(bn2)$type[1:10]
+table(V(bn2)$type)
 V(bn2)$color[1:10]
 V(bn2)$shape[1:10]
 
@@ -105,7 +105,11 @@ V(bn2)$deg <- degree(bn2)
 V(bn2)[type==FALSE & deg > 4]$name
 
 RelevantPrograms <- data.frame(cbind(
-  Program = V(bn2)[type==FALSE & deg > 4]$name,
+  Program = V(bn2)[type == FALSE]$name,
+  Skills = V(bn2)[type==FALSE & deg >= 4]$deg))
+
+AllPrograms <- data.frame(cbind(
+  Program = V(bn2)[type==FALSE & deg >= 1]$name,
   Skills = V(bn2)[type==FALSE & deg > 4]$deg))
 
 bn2.pr <- bipartite.projection(bn2)
@@ -117,7 +121,7 @@ Terms <- bn2.pr$proj2
 graph.density(Programs)
 graph.density(Terms)
 get.adjacency(Programs)  
-
+T2 <- as.matrix(get.adjacency(Terms)  )
 
 summary(bn2)
 hum <- data.frame(degree(bn2))
