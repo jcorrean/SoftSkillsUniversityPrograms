@@ -108,6 +108,9 @@ RelevantPrograms <- data.frame(cbind(
   Program = V(bn2)[type==FALSE & deg > 4]$name,
   Skills = V(bn2)[type==FALSE & deg > 4]$deg))
 
+bn2.pr <- bipartite.projection(bn2)
+V(bn2.pr$proj1)$name
+V(bn2.pr$proj2)$name
   
 summary(bn2)
 hum <- data.frame(degree(bn2))
