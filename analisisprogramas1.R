@@ -73,14 +73,13 @@ resolver, respetar, responsable, tolerar)
 rm(list=setdiff(ls(), "TODAS"))
 
 Network <- TODAS[,c(1,5)]
-NetworkU <- unique(Network[ , c('docname','keyword') ] )
-table(NetworkU$keyword)
+table(Network$keyword)
 verbos <- data.frame(table(NetworkU$keyword))
 #write.csv(verbos, file="verbos.csv")
 #NU <- Network[!duplicated(Network[c(1,2)]),]
 
 library(igraph)
-bn2 <- graph.data.frame(NetworkU,directed=FALSE)
+bn2 <- graph.data.frame(Network,directed=FALSE)
 bipartite.mapping(bn2)
 V(bn2)$type <- bipartite_mapping(bn2)$type
 V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
