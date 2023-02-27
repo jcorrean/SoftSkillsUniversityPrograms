@@ -16,6 +16,7 @@ veamos <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 docvars(veamos, "Program.Level") <- Muestra$`Academic Level`
+docvars(veamos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 
 summary(veamos)
 aja <- data.frame(summary(veamos, n = length(veamos)))
@@ -73,5 +74,8 @@ TODAS <- rbind(crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, 
                empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
                interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
                resolver, respetar, responsable, tolerar)
+colnames(aja)[1]  <- "docname"  
+library(dplyr)
+TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
 
 rm(list=setdiff(ls(), "TODAS"))
