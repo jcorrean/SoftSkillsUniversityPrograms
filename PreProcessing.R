@@ -66,7 +66,7 @@ responsable <- data.frame(kwic(Textos, pattern = "responsable"))
 evaluar <- data.frame(kwic(Textos, pattern = "evaluar"))
 innovar <- data.frame(kwic(Textos, pattern = "innovar"))
 
-rm(aja, institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
+rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
 
 
 TODAS <- rbind(crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
