@@ -39,9 +39,35 @@ prominence4$Program <- rownames(prominence4)
 
 library(dplyr)
 HighestSkills <- prominence4 %>% filter(., prominence4$prominence4.vector > 0.0037)
-HighestSkills <- HighestSkills$prominence4.vector[39:62]
+HS <- HighestSkills[39:62,]
 
-TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
+library(igraph)
+bn2 <- graph.data.frame(Network,directed=FALSE)
+bipartite.mapping(bn2)
+V(bn2)$type <- bipartite_mapping(bn2)$type
+V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
+V(bn2)$shape <- ifelse(V(bn2)$type, "circle", "square")
+V(bn2)$label.cex <- ifelse(V(bn2)$type, 0.8, 1)
+V(bn2)$size <- sqrt(degree(bn2))
+E(bn2)$color <- "grey"
+  plot(bn2, 
+       vertex.label = NA, 
+       layout = layout_components, 
+       main = "")
+
+
+plot(bn2, 
+     vertex.label = NA, 
+     layout = layout_components, 
+     main = "")
+
+V(bn2)$size <- prominence4$prominence4.vector
+plot(bn2, 
+     vertex.label = NA, 
+     layout = layout_components, 
+     main = "")
+
+#TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
 
 RelevantPrograms$Centrality <- promi
 
