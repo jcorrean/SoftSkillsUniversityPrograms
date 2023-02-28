@@ -29,6 +29,14 @@ table(V(bn2)$type)
 V(bn2)$color[1:10]
 V(bn2)$shape[1:10]
 
+# Network node prominence measures
+prominence <- data.frame(betweenness(bn2))
+prominence2 <- data.frame(degree(bn2))
+prominence3 <- data.frame(bonpow(bn2))
+prominence4 <- page.rank(bn2)
+prominence4 <- data.frame(prominence4$vector) 
+
+
 table(degree(bn2,v=V(bn2)[type==FALSE]))
 mean(degree(bn2,v=V(bn2)[type==FALSE]))
 var(degree(bn2,v=V(bn2)[type==FALSE]))
@@ -53,6 +61,7 @@ Terms <- bn2.pr$proj2
 
 
 graph.density(Programs)
+CentralityPrograms <- data.frame(degree(Programs))
 graph.density(Terms)
 get.adjacency(Programs)  
 T2 <- as.matrix(get.adjacency(Terms)  )
