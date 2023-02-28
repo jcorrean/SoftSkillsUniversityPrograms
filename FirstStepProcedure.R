@@ -35,6 +35,16 @@ prominence2 <- data.frame(degree(bn2))
 prominence3 <- data.frame(bonpow(bn2))
 prominence4 <- page.rank(bn2)
 prominence4 <- data.frame(prominence4$vector) 
+prominence4$Program <- rownames(prominence4)
+
+library(dplyr)
+HighestSkills <- prominence4 %>% filter(., prominence4$prominence4.vector > 0.0037)
+HighestSkills <- HighestSkills$prominence4.vector[39:62]
+
+TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
+
+RelevantPrograms$Centrality <- promi
+
 
 
 table(degree(bn2,v=V(bn2)[type==FALSE]))
