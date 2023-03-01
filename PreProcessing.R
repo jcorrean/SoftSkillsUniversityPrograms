@@ -85,3 +85,6 @@ TODAS <- rbind(crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, 
 colnames(aja)[1]  <- "docname"  
 library(dplyr)
 TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
+Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
+MS <- TODAS2 %>% filter(., Program.Level == "Masters")
+PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
