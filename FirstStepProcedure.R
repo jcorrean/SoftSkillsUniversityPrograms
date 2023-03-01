@@ -29,6 +29,11 @@ table(V(bn2)$type)
 V(bn2)$color[1:10]
 V(bn2)$shape[1:10]
 
+
+#library(rgexf)
+#pave <- igraph.to.gexf(bn2)
+#write.gexf(pave, output = "/home/jc/pave.gexf", replace = TRUE)
+
 # Network node prominence measures
 prominence <- data.frame(betweenness(bn2))
 prominence2 <- data.frame(degree(bn2))
@@ -56,21 +61,7 @@ E(bn2)$color <- "grey"
        main = "")
 
 
-plot(bn2, 
-     vertex.label = NA, 
-     layout = layout_components, 
-     main = "")
-
-V(bn2)$size <- prominence4$prominence4.vector
-plot(bn2, 
-     vertex.label = NA, 
-     layout = layout_components, 
-     main = "")
-
 #TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
-
-RelevantPrograms$Centrality <- promi
-
 
 
 table(degree(bn2,v=V(bn2)[type==FALSE]))
@@ -93,8 +84,28 @@ hist(RelevantPrograms$Skills, xlab= "Skills per program", main = "")
 bn2.pr <- bipartite.projection(bn2)
 Programs <- bn2.pr$proj1
 Terms <- bn2.pr$proj2
+c1 = cluster_fast_greedy(Terms)
+c2 = cluster_fast_greedy(Terms)
 
+# modularity measure
+modularity(c1)
+B = modularity_matrix(Programs, membership(c1))
+round(B[1,],2)
+membership(c1)
+length(c1)
+sizes(c1)
+crossing(c1, Terms)
+plot(c1, Terms, layout=layout_nicely(Terms, dim = 2))
 
+modularity(c2)
+B2 = modularity_matrix(Terms, membership(c2))
+round(B2[1,],2)
+ membership(c2)
+length(c2)
+sizes(c2)
+crossing(c2, Terms)
+plot(c2, Terms, layout=layout_with_dh)
+plot(Terms, vertex.color=membership(c2), layout=layout_with_dh)
 
 graph.density(Programs)
 CentralityPrograms <- data.frame(degree(Programs))
