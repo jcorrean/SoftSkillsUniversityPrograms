@@ -12,15 +12,23 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 
 library(quanteda)
-veamos <- corpus(textos)
+AllPrograms <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(veamos, "Program.Level") <- Muestra$`Academic Level`
-docvars(veamos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
+docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
+docvars(AllPrograms, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 
-summary(veamos)
-aja <- data.frame(summary(veamos, n = length(veamos)))
-Textos <- tokens(veamos)
+SPEC <- corpus_subset(AllPrograms, Program.Level == "Specialization")
+MS <- corpus_subset(AllPrograms, Program.Level == "Masters")
+PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
+
+
+summary(AllPrograms)
+aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
+
+
+
+Textos <- tokens(AllPrograms)
 Textos <- tokens_tolower(Textos)
 Textos
 
