@@ -88,3 +88,6 @@ TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja,
 Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
 MS <- TODAS2 %>% filter(., Program.Level == "Masters")
 PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
+Spec <- Spec %>% select(., "docname", "keyword")
+MS <- MS %>% select(., "docname", "keyword")
+PhD <- PhD %>% select(., "docname", "keyword")
