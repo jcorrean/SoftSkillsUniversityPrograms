@@ -49,3 +49,6 @@ ProgramsDF <- data.frame(jaccard = ProgramsDF[lower.tri(ProgramsDF, diag = FALSE
 library(mclust)
 fit <- Mclust(ProgramsDF)
 summary(fit)
+Classification <- data.frame(fit$classification)
+names(Classification)[1] <- "classification"
+clasificados$Category <- "Asian"
