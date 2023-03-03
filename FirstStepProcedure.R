@@ -121,7 +121,11 @@ cluster_fast_greedy(Terms)
 cluster_louvain(Terms)
 cluster_spinglass(Terms)
 oye <- cluster_leading_eigen(Terms)
+oye2 <- cluster_leading_eigen(Programs)
 modularity(oye)
+modularity(oye2)
+plot_dendrogram(oye)
+plot_dendrogram(oye2)
 
 modularity(c2)
 B2 = modularity_matrix(Terms, membership(c2))
@@ -141,6 +145,11 @@ T2 <- as.matrix(get.adjacency(Terms)  )
 
 summary(bn2)
 summary(Programs)
+graph.density(bn2)
+graph.density(Programs)
+graph.density(Terms)
+components(Programs)
+
 
 hum <- data.frame(degree(bn2))
 degree_distribution(bn2)
