@@ -41,6 +41,7 @@ prominence3 <- data.frame(bonpow(bn2))
 prominence4 <- page.rank(bn2)
 prominence4 <- data.frame(prominence4$vector) 
 prominence4$Program <- rownames(prominence4)
+prominence5 <- data.frame(eigen_centrality(bn2))
 
 library(dplyr)
 HighestSkills <- prominence4 %>% filter(., prominence4$prominence4.vector > 0.0037)
@@ -105,6 +106,22 @@ length(c1)
 sizes(c1)
 crossing(c1, Terms)
 plot(c1, Terms, layout=layout_nicely(Terms, dim = 2))
+clique.number(Terms)
+largest_cliques(Terms)
+
+library(intergraph)
+graph.coreness(Terms)
+coreness <- graph.coreness(Terms)
+table(coreness)
+
+V(Terms)$color <- coreness + 1
+plot(Terms,vertex.label.cex=0.8, layout = layout_components)
+
+cluster_fast_greedy(Terms)
+cluster_louvain(Terms)
+cluster_spinglass(Terms)
+oye <- cluster_leading_eigen(Terms)
+modularity(oye)
 
 modularity(c2)
 B2 = modularity_matrix(Terms, membership(c2))
