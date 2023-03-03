@@ -32,7 +32,11 @@ Textos <- tokens(AllPrograms)
 Textos <- tokens_tolower(Textos)
 Textos
 
+pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
+sp <- data.frame(kwic(Textos, pattern = phrase("solucionar problemas")))
 comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
+creatividad <- data.frame(kwic(Textos, pattern = "creatividad"))
+paciencia <- data.frame(kwic(Textos, pattern = "paciencia"))
 crear <- data.frame(kwic(Textos, pattern = "crear"))
 liderar <- data.frame(kwic(Textos, pattern = "liderar"))
 resolver <- data.frame(kwic(Textos, pattern = "resolver"))
@@ -74,10 +78,10 @@ responsable <- data.frame(kwic(Textos, pattern = "responsable"))
 evaluar <- data.frame(kwic(Textos, pattern = "evaluar"))
 innovar <- data.frame(kwic(Textos, pattern = "innovar"))
 
-rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR, veamos)
+rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
 
 
-TODAS <- rbind(crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+TODAS <- rbind(sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
                comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
                empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
                interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
