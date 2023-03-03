@@ -24,6 +24,11 @@ PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
 
 spanishstopwords <- c("egresado", "programa", "programas", "crédito", stopwords("spanish"))
 
+textos$Sector <- Muestra$SECTOR
+textos$Program.Level <- Muestra$`Academic Level`
+textos$Accreditation <- Muestra$Accreditation
+
+# General Classification
 library(quanteda)
 tokens <- textos$text %>%
   tokens(what = "word",
