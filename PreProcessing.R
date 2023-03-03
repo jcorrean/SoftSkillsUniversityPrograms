@@ -81,6 +81,7 @@ decidir <- data.frame(kwic(Textos, pattern = "decidir"))
 td <- data.frame(kwic(Textos, pattern = phrase("tomar decisiones")))
 flex <- data.frame(kwic(Textos, pattern = "flexibilidad"))
 
+
   
 rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
 
