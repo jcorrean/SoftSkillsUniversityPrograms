@@ -28,7 +28,7 @@ textos$Sector <- Muestra$SECTOR
 textos$Program.Level <- Muestra$`Academic Level`
 textos$Accreditation <- Muestra$Accreditation
 
-# General Classification
+# General Classification (All programs)
 library(quanteda)
 tokens <- textos$text %>%
   tokens(what = "word",
@@ -56,4 +56,64 @@ fit <- Mclust(ProgramsDF)
 summary(fit)
 Classification <- data.frame(fit$classification)
 names(Classification)[1] <- "classification"
-clasificados$Category <- "Asian"
+
+
+# Public-Private Classification
+library(dplyr)
+OfficialP <- textos %>% filter(., Sector == "Official")
+
+tokens.O <- OfficialP$text  %>%  
+  tokens(what = "word",
+         remove_punct = TRUE,
+         remove_numbers = TRUE,
+         remove_url = TRUE) %>%
+  tokens_tolower() %>%
+  tokens_remove(c("campo", "través", "maestría", "país", "áreas", "nivel", "calidad", "estudios", "universidad", "profesionales", "perfil", "profesional", "especialización", "nacional", "formación", "egresado", "programa", "programas", "crédito", stopwords("spanish")))
+
+dfm <- dfm_trim(dfm(tokens.O), min_docfreq = 0.005, max_docfreq = 0.99, 
+                docfreq_type = "prop", verbose = TRUE)
+topfeatures(dfm, n = 40, scheme = "docfreq")
+
+dfm <- dfm_remove(dfm, c("así", "estudiantes", "área", "así"))
+
+library(quanteda.textstats)
+Programs <- textstat_simil(dfm, margin = "documents", method = "jaccard")
+ProgramsDF <- data.frame(as.matrix(Programs))
+ProgramsDF <- data.frame(jaccard = ProgramsDF[lower.tri(ProgramsDF, diag = FALSE)])
+
+# In fourth place, we applied
+# a Gaussian finite mixture model fitted by EM algorithm
+library(mclust)
+fit <- Mclust(ProgramsDF)
+summary(fit)
+Classification <- data.frame(fit$classification)
+names(Classification)[1] <- "classification"
+
+PrivateP <- textos %>% filter(., Sector == "Private")
+
+tokens.P <- PrivateP$text  %>%  
+  tokens(what = "word",
+         remove_punct = TRUE,
+         remove_numbers = TRUE,
+         remove_url = TRUE) %>%
+  tokens_tolower() %>%
+  tokens_remove(c("campo", "través", "maestría", "país", "áreas", "nivel", "calidad", "estudios", "universidad", "profesionales", "perfil", "profesional", "especialización", "nacional", "formación", "egresado", "programa", "programas", "crédito", stopwords("spanish")))
+
+dfm <- dfm_trim(dfm(tokens.P), min_docfreq = 0.005, max_docfreq = 0.99, 
+                docfreq_type = "prop", verbose = TRUE)
+topfeatures(dfm, n = 40, scheme = "docfreq")
+
+dfm <- dfm_remove(dfm, c("así", "estudiantes", "área", "así"))
+
+library(quanteda.textstats)
+Programs <- textstat_simil(dfm, margin = "documents", method = "jaccard")
+ProgramsDF <- data.frame(as.matrix(Programs))
+ProgramsDF <- data.frame(jaccard = ProgramsDF[lower.tri(ProgramsDF, diag = FALSE)])
+
+# In fourth place, we applied
+# a Gaussian finite mixture model fitted by EM algorithm
+library(mclust)
+fit <- Mclust(ProgramsDF)
+summary(fit)
+Classification <- data.frame(fit$classification)
+names(Classification)[1] <- "classification"
