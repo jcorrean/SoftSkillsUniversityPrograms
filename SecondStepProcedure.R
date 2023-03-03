@@ -1,4 +1,5 @@
-#SECOND STEP
+# Topic Modeling Solution
+
 setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
 listado <- data.frame(dir())
 library(readtext)
@@ -11,167 +12,40 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 
 library(quanteda)
-veamos <- corpus(textos)
+AllPrograms <- corpus(textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(veamos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-summary(veamos)
-aja <- data.frame(summary(veamos, n = length(veamos)))
-Textos <- tokens(veamos)
-Textos <- tokens_tolower(Textos)
-Textos
+docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
+docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
+docvars(AllPrograms, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 
+SPEC <- corpus_subset(AllPrograms, Program.Level == "Specialization")
+MS <- corpus_subset(AllPrograms, Program.Level == "Masters")
+PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
 
+spanishstopwords <- c("egresado", "programa", "programas", "crédito", stopwords("spanish"))
 
-dict <- dictionary(list(Self_Awareness = c("emoci", "auto-percepción", "fortaleza", "necesidad", "valor", "autoeficacia", "espiritualidad"), 
-                        Social_Awareness = c("perspectiva", "empatía", "diversidad", "respeto"),
-                        Decision_Making = c("identificación", "situación", "análisis", "reflexi", "moral", "ético", "responsabilid"),
-                        Self_Management = c("Impulso", "control", "auto-gestión", "auto-motivaci", "disciplina", "meta", "habilidad"),
-                        Relationship_Management = c("lider", "comunicaci", "compromiso", "relaci", "cooperac", "negociaci", "conflict", "ayuda", "búsqued")))
-
-
-
-pavet <- tokens(veamos)
-class(pavet)
-pave <- tokens(veamos) %>% tokens_lookup(dictionary = dict) %>% dfm()
-pave
-paved <- convert(pave, to = "data.frame")
-paved$doc_id <- Muestra$NOMBRE_DEL_PROGRAMA
-names(paved)[1] <- "Programa"
-
-sum(paved$self_awareness)
-sum(paved$social_awareness)
-sum(paved$decision_making)
-sum(paved$self_management)
-sum(paved$relationship_management)
-
-Focus <- data.frame(Soft_Skills=c("Self-Awareness", "Social Awareness", "Responsible Decision-Making", "Self Management", "Relationship Management"),
-                    Frequency=c(sum(paved$self_awareness),
-                                sum(paved$social_awareness),
-                                sum(paved$decision_making),
-                                sum(paved$self_management),
-                                sum(paved$relationship_management)))
-library(dplyr)
-newcsv <- paved %>%
-  group_by(Programa) %>%
-  summarise(
-    self_awareness = sum(self_awareness)
-  )
-
-newcsv2 <- paved %>%
-  group_by(Programa) %>%
-  summarise(
-    social_awareness = sum(social_awareness)
-  )
-
-newcsv3 <- paved %>%
-  group_by(Programa) %>%
-  summarise(
-    decision_making = sum(decision_making)
-  )
-
-newcsv4 <- paved %>%
-  group_by(Programa) %>%
-  summarise(
-    self_management = sum(self_management)
-  )
-
-newcsv5 <- paved %>%
-  group_by(Programa) %>%
-  summarise(
-    relationship_management = sum(relationship_management)
-  )
-
-library(ggplot2)
-ggplot(data=Focus, aes(x=reorder(Soft_Skills, -Frequency), y=Frequency)) +
-  geom_bar(stat="identity", fill = "red") + geom_text(aes(label=Frequency), vjust=1.6, color="white", size=3.5)+
-  theme_bw()+ xlab("Socio-Emotional Skills")
-
-
-summary(veamos)
-veamos2 <- dfm(veamos, remove = stopwords("spanish"), remove_punct = TRUE, remove_numbers = TRUE)
-class(veamos2)
-topfeatures(veamos2, 20)
-veamos3 <- dfm_remove(veamos2, c("formación", "investigación", 
-                                 "gestión", "universidad", "proyectos",
-                                 "maestría", "especialización", 
-                                 "doctorado", "educación", "programa",
-                                 "procesos", "profesionales", "salud",
-                                 "profesional", "créditos", "estudios",
-                                 "nacional", "nivel", "virtual", "perfil",
-                                 "internacional", "i", "través", "egresado", "áreas"))
-topfeatures(veamos3, 20)
-red <- as.matrix(veamos2)
-red_data <- data.frame(red)
-palabras <- data.frame(variable.names(red_data))
-
-library(quanteda.textstats)
-freq_weight <- textstat_frequency(veamos3, n = 20)
-freq_weight <- freq_weight %>% filter(!row_number() %in% c(1, 2, 4, 6, 7, 9, 12, 13, 15, 17, 18, 20))
-
-
-ggplot(data = freq_weight, aes(x = nrow(freq_weight):1, y = frequency)) +
-  geom_point() +
-  facet_wrap(~ group, scales = "free") +
-  coord_flip() +
-  scale_x_continuous(breaks = nrow(freq_weight):1,
-                     labels = freq_weight$feature) +
-  labs(x = NULL, y = "Frecuencia")
-
-library(tidyverse)
-Terminos <- red_data %>% select(matches("emocio|percepc|fortalez|necesid|valo|eficacia|espiritualidad|perspectiva|empatía|diversidad|respeto|identificación|situación|análisis|reflexi|moral|ético|responsabilid|Impulso|control|auto-gestión|auto-motivaci|disciplina|meta|habilidad|comunicaci|compromiso|relaci|cooperac|negociaci|conflict|ayuda|búsqued"))
-int <- as.matrix(Terminos)
-skills <- as.matrix(paved)
-
-library(igraph)
-bn <- graph.incidence(skills)
-summary(bn)
-shapes <- c("circle","square")
-colors <- c("lightgreen","red")
-#Verdes son programas, Rojos son Enfoques
-plot(bn,vertex.color=c("lightgreen","red")[V(bn)$type+1],
-     vertex.shape=shapes[V(bn)$type+1],
-     vertex.size=2,
-     vertex.label.dist=1.2, vertex.label=NA)
-word_degrees <- as.matrix(degree(bn, mode = "in"))
-communities <- cluster_edge_betweenness(bn)
-
-# Plot the bipartite graph with the communities colored
-plot(bn, vertex.color = communities$membership, 
-     vertex.size=4)
-
-plot(bn, layout = layout_randomly,
-     vertex.color=c("lightgreen","red")[V(bn)$type+1], 
-     vertex.size=4,
-     vertex.label=NA)
-
-toks <- veamos %>%
-  tokens(remove_punct = TRUE, remove_numbers = TRUE) %>%
+library(quanteda)
+tokens <- textos$text %>%
+  tokens(what = "word",
+         remove_punct = TRUE,
+         remove_numbers = TRUE,
+         remove_url = TRUE) %>%
   tokens_tolower() %>%
-  tokens_remove(pattern = stopwords("spanish"), padding = FALSE)
-fcmat <- fcm(toks, context = "window", tri = FALSE)
-feat <- names(topfeatures(fcmat, 30))
-feat[27] <- "NULL"
+  tokens_remove(c("campo", "través", "maestría", "país", "áreas", "nivel", "calidad", "estudios", "universidad", "profesionales", "perfil", "profesional", "especialización", "nacional", "formación", "egresado", "programa", "programas", "crédito", stopwords("spanish")))
 
-library(quanteda.textplots)
-fcm_select(fcmat, pattern = feat) %>%
-  textplot_network(min_freq = 0.5)
+dfm <- dfm_trim(dfm(tokens), min_docfreq = 0.005, max_docfreq = 0.99, 
+                docfreq_type = "prop", verbose = TRUE)
+topfeatures(dfm, n = 40, scheme = "docfreq")
 
+dfm <- dfm_remove(dfm, c("así", "estudiantes", "área", "así"))
 
-library(tidyverse)
-redcualidades <- red_data %>% select(creatividad, liderazgo, conciencia)
-palabras <- data.frame(variable.names(red_data))
-
-dfmat_sotu <- dfm_trim(veamos2, min_termfreq = 5, min_docfreq = 3)
 library(quanteda.textstats)
-# hierarchical clustering - get distances on normalized dfm
-tstat_dist <- textstat_dist(dfm_weight(dfmat_sotu, scheme = "prop"))
-# hiarchical clustering the distance object
-pres_cluster <- hclust(as.dist(tstat_dist))
-# label with document names
-pres_cluster$labels <- docnames(dfmat_sotu)
-# plot as a dendrogram
-plot(pres_cluster, xlab = "", sub = "",
-     main = "Euclidean Distance on Normalized Token Frequency")
-library(quanteda.textplots)
-topgat_fcm <- fcm(veamos2, pattern = liderazgo)
-textplot_network(topgat_fcm, min_freq = 1, edge_alpha = 0.8, edge_size = 5)
+Programs <- textstat_simil(dfm, margin = "documents", method = "jaccard")
+ProgramsDF <- data.frame(as.matrix(Programs))
+ProgramsDF <- data.frame(jaccard = ProgramsDF[lower.tri(ProgramsDF, diag = FALSE)])
+
+# In fourth place, we applied
+# a Gaussian finite mixture model fitted by EM algorithm
+library(mclust)
+fit <- Mclust(ProgramsDF)
+summary(fit)
