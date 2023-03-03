@@ -79,6 +79,15 @@ RelevantPrograms <- data.frame(cbind(
 
 RelevantPrograms$Skills <- as.numeric(RelevantPrograms$Skills)
 
+
+ah <- data.frame(table(RelevantPrograms$Skills))
+colnames(ah)[1] <- "degree"
+ah$degree <- as.numeric(ah$degree)
+
+
+plot(ah$degree, ah$Freq, xlab = "degree", ylab= "Frequency")
+
+
 hist(RelevantPrograms$Skills, xlab= "Skills per program", main = "")
 
 bn2.pr <- bipartite.projection(bn2)
