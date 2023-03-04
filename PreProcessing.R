@@ -80,13 +80,15 @@ innovar <- data.frame(kwic(Textos, pattern = "innovar"))
 decidir <- data.frame(kwic(Textos, pattern = "decidir"))
 td <- data.frame(kwic(Textos, pattern = phrase("tomar decisiones")))
 flex <- data.frame(kwic(Textos, pattern = "flexibilidad"))
+persu <- data.frame(kwic(Textos, pattern = "persua*"))
+conven <- data.frame(kwic(Textos, pattern = "convencer"))
 
 
   
 rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
 
 
-TODAS <- rbind(flex, td, decidir, sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+TODAS <- rbind(persu, conven, flex, td, decidir, sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
                comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
                empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
                interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
