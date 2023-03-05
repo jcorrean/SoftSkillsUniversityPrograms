@@ -30,7 +30,7 @@ aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
 
 Textos <- tokens(AllPrograms)
 Textos <- tokens_tolower(Textos)
-Textos <- tokens_select(Textos, c(".", ",", ";", "", stopwords("spanish")), selection = "remove", case_insensitive = FALSE)
+Textos <- tokens_select(Textos, c(".", ",", ";", stopwords("spanish")), selection = "remove", case_insensitive = FALSE)
 Textos
 
 PhD <- tokens_select(Textos, pattern = stopwords("es"), selection = "remove")
