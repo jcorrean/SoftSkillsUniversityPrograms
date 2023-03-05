@@ -13,7 +13,7 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 library(quanteda)
 AllPrograms <- corpus(textos)
-AllP <- dfm(AllPrograms)
+#AllP <- dfm(AllPrograms)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
@@ -23,7 +23,6 @@ SPEC <- corpus_subset(AllPrograms, Program.Level == "Specialization")
 MS <- corpus_subset(AllPrograms, Program.Level == "Masters")
 PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
 
-
 summary(AllPrograms)
 aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
 
@@ -31,7 +30,12 @@ aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
 
 Textos <- tokens(AllPrograms)
 Textos <- tokens_tolower(Textos)
+Textos <- tokens_select(Textos, c(".", ",", ";", "", stopwords("spanish")), selection = "remove", case_insensitive = FALSE)
 Textos
+
+PhD <- tokens_select(Textos, pattern = stopwords("es"), selection = "remove")
+AllP <- dfm(PhD, remove_punct = TRUE, remove_numbers = TRUE)
+AllP <- as.matrix(AllP)
 
 # Keywords-in-context Search
 pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
