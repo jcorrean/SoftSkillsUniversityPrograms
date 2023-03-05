@@ -8,7 +8,7 @@ Network <- TODAS[,c(1,5)]
 table(Network$keyword)
 verbos <- data.frame(table(Network$keyword))
 #write.csv(verbos, file="verbos.csv")
-#NU <- Network[!duplicated(Network[c(1,2)]),]
+Network <- Network[!duplicated(Network[c(1,2)]),]
 
 library(igraph)
 bn2 <- graph.data.frame(Network,directed=FALSE)
@@ -72,6 +72,8 @@ mean(degree(bn2,v=V(bn2)[type==FALSE]))
 var(degree(bn2,v=V(bn2)[type==FALSE]))
 min(degree(bn2,v=V(bn2)[type==FALSE]))
 max(degree(bn2,v=V(bn2)[type==FALSE]))
+edge_density(bn2)
+gtrans
 
 V(bn2)$deg <- degree(bn2)
 V(bn2)[type==FALSE & deg > 4]$name
