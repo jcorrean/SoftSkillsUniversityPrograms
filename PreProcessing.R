@@ -13,6 +13,7 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 library(quanteda)
 AllPrograms <- corpus(textos)
+AllP <- dfm(AllPrograms)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
@@ -32,6 +33,7 @@ Textos <- tokens(AllPrograms)
 Textos <- tokens_tolower(Textos)
 Textos
 
+# Keywords-in-context Search
 pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
 sp <- data.frame(kwic(Textos, pattern = phrase("solucionar problemas")))
 comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
