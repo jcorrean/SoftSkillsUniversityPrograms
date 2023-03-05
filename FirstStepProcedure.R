@@ -9,6 +9,7 @@ table(Network$keyword)
 verbos <- data.frame(table(Network$keyword))
 #write.csv(verbos, file="verbos.csv")
 Network <- Network[!duplicated(Network[c(1,2)]),]
+verbos <- data.frame(table(Network$keyword))
 
 library(igraph)
 bn2 <- graph.data.frame(Network,directed=FALSE)
@@ -29,7 +30,14 @@ table(V(bn2)$type)
 V(bn2)$color[1:10]
 V(bn2)$shape[1:10]
 
+# Useful syntaxes for plotting0
+#pave <- as_adjacency_matrix(bn2)
+#library(bipartite)
+#plotweb2(pave)
+#visweb(pave)
 
+
+# Useful syntaxes for exporting to
 #library(rgexf)
 #pave <- igraph.to.gexf(bn2)
 #write.gexf(pave, output = "/home/jc/pave.gexf", replace = TRUE)
@@ -73,7 +81,6 @@ var(degree(bn2,v=V(bn2)[type==FALSE]))
 min(degree(bn2,v=V(bn2)[type==FALSE]))
 max(degree(bn2,v=V(bn2)[type==FALSE]))
 edge_density(bn2)
-gtrans
 
 V(bn2)$deg <- degree(bn2)
 V(bn2)[type==FALSE & deg > 4]$name
