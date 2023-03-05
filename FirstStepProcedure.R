@@ -37,7 +37,7 @@ V(bn2)$shape[1:10]
 #visweb(pave)
 
 
-# Useful syntaxes for exporting to
+# Useful syntaxes for exporting
 #library(rgexf)
 #pave <- igraph.to.gexf(bn2)
 #write.gexf(pave, output = "/home/jc/pave.gexf", replace = TRUE)
