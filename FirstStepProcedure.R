@@ -60,7 +60,9 @@ E(bn2)$color <- "lightgrey"
        vertex.label = NA, 
        layout = layout_as_bipartite, 
        main = "")
-
+  
+  x <- tkplot(bn2)
+  
 
 #TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
 
@@ -105,7 +107,7 @@ membership(c1)
 length(c1)
 sizes(c1)
 crossing(c1, Terms)
-plot(c1, Terms, layout=layout_nicely(Terms, dim = 2))
+plot(c1, Terms, layout=layout_with_dh(Terms))
 clique.number(Terms)
 largest_cliques(Terms)
 
