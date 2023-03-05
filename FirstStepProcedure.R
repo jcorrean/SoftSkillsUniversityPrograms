@@ -115,7 +115,8 @@ coreness <- graph.coreness(Terms)
 table(coreness)
 
 V(Terms)$color <- coreness + 1
-plot(Terms,vertex.label.cex=0.8, layout = layout_components)
+plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=20, edge.width=2, edge.color="lightgray",  layout = layout_nicely, main = "Soft Skills Unipartite Network")
+plot(Programs,vertex.label.color="black", vertex.label.cex=1, vertex.color="pink", vertex.size=20, edge.width=2, edge.color="lightgray", layout = layout_components, main = "Programs Unipartite Network")
 
 cluster_fast_greedy(Terms)
 cluster_louvain(Terms)
@@ -134,8 +135,10 @@ round(B2[1,],2)
 length(c2)
 sizes(c2)
 crossing(c2, Terms)
+
+par(mfrow=c(1,2))
 plot(c2, Terms, layout=layout_with_dh)
-plot(Terms, vertex.color=membership(c2), layout=layout_with_dh)
+plot(Programs, vertex.color=membership(c2), layout=layout_with_dh)
 
 graph.density(Programs)
 CentralityPrograms <- data.frame(degree(Programs))
