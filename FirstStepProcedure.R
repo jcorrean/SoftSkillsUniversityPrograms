@@ -55,10 +55,10 @@ V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
 V(bn2)$shape <- ifelse(V(bn2)$type, "circle", "square")
 V(bn2)$label.cex <- ifelse(V(bn2)$type, 0.8, 1)
 V(bn2)$size <- sqrt(degree(bn2))
-E(bn2)$color <- "grey"
+E(bn2)$color <- "lightgrey"
   plot(bn2, 
        vertex.label = NA, 
-       layout = layout_components, 
+       layout = layout_as_bipartite, 
        main = "")
 
 
