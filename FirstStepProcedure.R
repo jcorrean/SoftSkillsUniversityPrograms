@@ -161,15 +161,17 @@ V(Terms)$color <- coreness + 1
 plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=15, edge.width=2, edge.color="lightgray",  layout = layout_components, main = "Soft Skills Unipartite Network")
 plot(Programs,vertex.label.color="black", vertex.label.cex=1, vertex.color="pink", vertex.size=20, edge.width=2, edge.color="lightgray", layout = layout_components, main = "Programs Unipartite Network")
 
-cluster_fast_greedy(Terms)
-cluster_louvain(Terms)
-cluster_spinglass(Terms)
+cluster_fast_greedy(bn2)
+cluster_louvain(bn2)
+cluster_spinglass(bn2)
 oye <- cluster_leading_eigen(Terms)
 oye2 <- cluster_leading_eigen(Programs)
 modularity(oye)
 modularity(oye2)
+modularity(bn2)
 plot_dendrogram(oye)
 plot_dendrogram(oye2)
+
 
 modularity(c2)
 B2 = modularity_matrix(Terms, membership(c2))
