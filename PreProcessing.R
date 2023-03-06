@@ -26,31 +26,28 @@ MS <- corpus_subset(Textos, Program.Level == "Masters")
 PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
 phd <- data.frame(summary(PhD, n = length(PhD)))
 
-ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
-ave
-ave2 <- tokens(PhD, remove_numbers = TRUE, remove_punct = TRUE) %>%  
-  dfm(remove = stopwords("spanish"))
-topfeatures(ave2, 50)
+#####################
+#ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
+#ave
+#ave2 <- tokens(PhD, remove_numbers = TRUE, remove_punct = TRUE) %>%  
+#  dfm(remove = stopwords("spanish"))
+#topfeatures(ave2, 50)
 
-ave3 <- dfm_remove(ave2, c("través", "áreas", "maestría", "mba", "i", "ii", "doctorado", "interinstitucional", "universidad", "pedagógica", "nacional"))
+#ave3 <- dfm_remove(ave2, c("través", "áreas", "maestría", "mba", "i", "ii", "doctorado", "interinstitucional", "universidad", "pedagógica", "nacional"))
 
-ave4 <- as.matrix(ave3)
-ave5 <- dfm_keep(ave3, c("generar", "trabajo en equipo", "liderar", "ético"))
-ave6 <- as.matrix(ave5)
-library(bipartite)
-plotweb2(ave6)
-visweb(ave6)
-mod <- computeModules(ave6)
-plotModuleWeb(mod)
+#ave4 <- as.matrix(ave3)
+#ave5 <- dfm_keep(ave3, c("generar", "trabajo en equipo", "liderar", "ético"))
+#ave6 <- as.matrix(ave5)
+#library(bipartite)
+#plotweb2(ave6)
+#visweb(ave6)
+#mod <- computeModules(ave6)
+#plotModuleWeb(mod)
+#row.names(ave6)[1:27] <- phd$Programa
 
-row.names(ave6)[1] <- "PhD in Education"
-row.names(ave6)[2] <- "Spec in Digital Contents"
-row.names(ave6)[3] <- "Spec in Maxillofacial Dentistry"
-colnames(ave6)[1] <- "Generate"
-colnames(ave6)[2] <- "Ethics"
-colnames(ave6)[3] <- "Lead"
+#visweb(ave6)
+#######################
 
-visweb(ave6)
 
 # Keywords-in-context Search
 pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
