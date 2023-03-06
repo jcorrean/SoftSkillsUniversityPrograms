@@ -24,6 +24,7 @@ aja <- data.frame(summary(Textos, n = length(Textos)))
 SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
 MS <- corpus_subset(Textos, Program.Level == "Masters")
 PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+phd <- data.frame(summary(PhD, n = length(PhD)))
 
 ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
 ave
@@ -39,6 +40,8 @@ ave6 <- as.matrix(ave5)
 library(bipartite)
 plotweb2(ave6)
 visweb(ave6)
+mod <- computeModules(ave6)
+plotModuleWeb(mod)
 
 row.names(ave6)[1] <- "PhD in Education"
 row.names(ave6)[2] <- "Spec in Digital Contents"
