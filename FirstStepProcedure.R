@@ -1,8 +1,10 @@
 # First Step Procedure
+# Analysis of Skills centrality
 
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/PreProcessing.RData")
 rm(list=setdiff(ls(), "TODAS"))
-
+TODAS$keyword <- tolower(TODAS$keyword)
+Dictionary <- data.frame(table(TODAS$keyword))
 
 Network <- TODAS[,c(1,5)]
 table(Network$keyword)
@@ -43,17 +45,21 @@ V(bn2)$shape[1:10]
 #write.gexf(pave, output = "/home/jc/pave.gexf", replace = TRUE)
 
 # Network node prominence measures
-prominence <- data.frame(betweenness(bn2))
-prominence2 <- data.frame(degree(bn2))
-prominence3 <- data.frame(bonpow(bn2))
-prominence4 <- page.rank(bn2)
-prominence4 <- data.frame(prominence4$vector) 
-prominence4$Program <- rownames(prominence4)
-prominence5 <- data.frame(eigen_centrality(bn2))
+Degrees <- data.frame(degree(bn2))
+Betweenness <- data.frame(betweenness(bn2))
+Closeness <- data.frame(closeness(bn2))
+Eigen <- data.frame(eigen_centrality(bn2))
+#prominence4 <- page.rank(bn2)
+#prominence4 <- data.frame(prominence4$vector) 
+#prominence4$Program <- rownames(prominence4)
 
-library(dplyr)
-HighestSkills <- prominence4 %>% filter(., prominence4$prominence4.vector > 0.0037)
-HS <- HighestSkills[39:62,]
+table(degree(bn2,v=V(bn2)[type==FALSE]))
+mean(degree(bn2,v=V(bn2)[type==FALSE]))
+var(degree(bn2,v=V(bn2)[type==FALSE]))
+min(degree(bn2,v=V(bn2)[type==FALSE]))
+max(degree(bn2,v=V(bn2)[type==FALSE]))
+edge_density(bn2)
+
 
 library(igraph)
 bn2 <- graph.data.frame(Network,directed=FALSE)
@@ -69,54 +75,28 @@ E(bn2)$color <- "lightgrey"
        layout = layout_as_bipartite, 
        main = "")
   
-  x <- tkplot(bn2)
-  
-
-#TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
-
-
-table(degree(bn2,v=V(bn2)[type==FALSE]))
-mean(degree(bn2,v=V(bn2)[type==FALSE]))
-var(degree(bn2,v=V(bn2)[type==FALSE]))
-min(degree(bn2,v=V(bn2)[type==FALSE]))
-max(degree(bn2,v=V(bn2)[type==FALSE]))
-edge_density(bn2)
-
-V(bn2)$deg <- degree(bn2)
-V(bn2)[type==FALSE & deg > 4]$name
-
-RelevantPrograms <- data.frame(cbind(
-  Program = V(bn2)[type == FALSE]$name,
-  Skills = V(bn2)[type==FALSE & deg >= 4]$deg))
-
-RelevantPrograms$Skills <- as.numeric(RelevantPrograms$Skills)
-
-
-ah <- data.frame(table(RelevantPrograms$Skills))
-colnames(ah)[1] <- "degree"
-ah$degree <- as.numeric(ah$degree)
-
-
-plot(ah$degree, ah$Freq, xlab = "degree", ylab= "Frequency")
-
-
-hist(RelevantPrograms$Skills, xlab= "Skills per program", main = "")
+#x <- tkplot(bn2)
 
 bn2.pr <- bipartite.projection(bn2)
 Programs <- bn2.pr$proj1
 Terms <- bn2.pr$proj2
-c1 = cluster_fast_greedy(Terms)
-c2 = cluster_fast_greedy(Terms)
+SkillsCentrality <- data.frame(Degree = degree(Terms),
+                               Closeness = closeness(Terms),
+                               Betweennes = betweenness(Terms),
+                               Eigen = eigen_centrality(Terms))
+
+#c1 = cluster_fast_greedy(Terms)
+#c2 = cluster_fast_greedy(Terms)
 
 # modularity measure
-modularity(c1)
-B = modularity_matrix(Programs, membership(c1))
-round(B[1,],2)
-membership(c1)
-length(c1)
-sizes(c1)
-crossing(c1, Terms)
-plot(c1, Terms, layout=layout_with_dh(Terms))
+#modularity(c1)
+#B = modularity_matrix(Programs, membership(c1))
+#round(B[1,],2)
+#membership(c1)
+#length(c1)
+#sizes(c1)
+#crossing(c1, Terms)
+#plot(c1, Terms, layout=layout_with_dh(Terms))
 clique.number(Terms)
 largest_cliques(Terms)
 
@@ -126,7 +106,7 @@ coreness <- graph.coreness(Terms)
 table(coreness)
 
 V(Terms)$color <- coreness + 1
-plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=20, edge.width=2, edge.color="lightgray",  layout = layout_nicely, main = "Soft Skills Unipartite Network")
+plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=20, edge.width=2, edge.color="lightgray",  layout = layout_on_grid, main = "Soft Skills Unipartite Network")
 plot(Programs,vertex.label.color="black", vertex.label.cex=1, vertex.color="pink", vertex.size=20, edge.width=2, edge.color="lightgray", layout = layout_components, main = "Programs Unipartite Network")
 
 cluster_fast_greedy(Terms)
@@ -168,10 +148,10 @@ components(Programs)
 hum <- data.frame(degree(bn2))
 degree_distribution(bn2)
 hist(degree_distribution(bn2))
-ecount(bn2) #size of the graph (number of edges)
-edge.betweenness(bn2)
-hist(edge.betweenness(bn2))
-EB <- data.frame(edge.betweenness(bn2))
+ecount(Terms) #size of the graph (number of edges)
+edge.betweenness(Terms)
+hist(edge.betweenness(Terms))
+EB <- data.frame(edge.betweenness(Terms))
 
 edge.connectivity(bn2)
 edge.connectivity(bn2)
