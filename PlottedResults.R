@@ -26,8 +26,8 @@ E(bn2)$color <- "grey"
 pave <- as_adj(bn2)
 library(bipartite)
 data("motten1982")
-plotweb2(pave)
+plotweb2(T2)
 visweb(pave)
 
-mod <- computeModules(pave)
+mod <- computeModules(T2)
 plotModuleWeb(mod)
