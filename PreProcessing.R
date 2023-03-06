@@ -12,30 +12,42 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 
 library(quanteda)
-AllPrograms <- corpus(textos)
-#AllP <- dfm(AllPrograms)
+Textos <- corpus(textos)
+#AllP <- dfm(Textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
-docvars(AllPrograms, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
+docvars(Textos, "Program.Level") <- Muestra$`Academic Level`
+docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+summary(Textos)
+aja <- data.frame(summary(Textos, n = length(Textos)))
 
-SPEC <- corpus_subset(AllPrograms, Program.Level == "Specialization")
-MS <- corpus_subset(AllPrograms, Program.Level == "Masters")
-PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
+SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
+MS <- corpus_subset(Textos, Program.Level == "Masters")
+PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
 
-summary(AllPrograms)
-aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
+ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
+ave
+ave2 <- tokens(PhD, remove_numbers = TRUE, remove_punct = TRUE) %>%  
+  dfm(remove = stopwords("spanish"))
+topfeatures(ave2, 50)
 
+ave3 <- dfm_remove(ave2, c("través", "áreas", "maestría", "mba", "i", "ii", "doctorado", "interinstitucional", "universidad", "pedagógica", "nacional"))
 
+ave4 <- as.matrix(ave3)
+ave5 <- dfm_keep(ave3, c("generar", "trabajo en equipo", "liderar", "ético"))
+ave6 <- as.matrix(ave5)
+library(bipartite)
+plotweb2(ave6)
+visweb(ave6)
 
-Textos <- tokens(AllPrograms)
-Textos <- tokens_tolower(Textos)
-Textos <- tokens_select(Textos, c(".", ",", ";", stopwords("spanish")), selection = "remove", case_insensitive = FALSE)
-Textos
+row.names(ave6)[1] <- "PhD in Education"
+row.names(ave6)[2] <- "Spec in Digital Contents"
+row.names(ave6)[3] <- "Spec in Maxillofacial Dentistry"
+colnames(ave6)[1] <- "Generate"
+colnames(ave6)[2] <- "Ethics"
+colnames(ave6)[3] <- "Lead"
 
-PhD <- tokens_select(Textos, pattern = stopwords("es"), selection = "remove")
-AllP <- dfm(PhD, remove_punct = TRUE, remove_numbers = TRUE)
-AllP <- as.matrix(AllP)
+visweb(ave6)
 
 # Keywords-in-context Search
 pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
