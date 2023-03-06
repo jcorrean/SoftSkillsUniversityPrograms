@@ -78,13 +78,59 @@ E(bn2)$color <- "lightgrey"
 #x <- tkplot(bn2)
 
 bn2.pr <- bipartite.projection(bn2)
+max(degree(Programs))
 Programs <- bn2.pr$proj1
+
+SkillsProgramsCentrality <- data.frame(Degree = degree(bn2),
+                                       Closeness = closeness(bn2),
+                                       Betweennes = betweenness(bn2),
+                                       Eigen = eigen_centrality(bn2))
+SkillsProgramsCentrality <- SkillsProgramsCentrality[ -c(5:25) ]
+
+library(psych)
+pairs.panels(SkillsProgramsCentrality, 
+             method = "spearman", 
+             hist.col = "green",
+             density = TRUE,  
+             ellipses = TRUE,
+             pch = 21,
+             cex = 2.5,
+             cex.axis = 1.8,
+             cex.labels = 2.5,
+             lwd = 2,
+             rug = TRUE,
+             stars = TRUE
+)
+
+
+SkillsProgramsCentrality$Skill <- row.names(SkillsProgramsCentrality)
+
+
 Terms <- bn2.pr$proj2
 SkillsCentrality <- data.frame(Degree = degree(Terms),
                                Closeness = closeness(Terms),
                                Betweennes = betweenness(Terms),
                                Eigen = eigen_centrality(Terms))
 
+SkillsCentrality <- SkillsCentrality[ -c(5:25) ]
+
+
+library(psych)
+pairs.panels(SkillsCentrality, 
+             method = "spearman", 
+             hist.col = "green",
+             density = TRUE,  
+             ellipses = TRUE,
+             pch = 21,
+             cex = 2.5,
+             cex.axis = 1.8,
+             cex.labels = 2.5,
+             lwd = 2,
+             rug = TRUE,
+             stars = TRUE
+)
+
+SkillsCentrality$Skill <- row.names(SkillsCentrality)
 #c1 = cluster_fast_greedy(Terms)
 #c2 = cluster_fast_greedy(Terms)
 
@@ -97,8 +143,14 @@ SkillsCentrality <- data.frame(Degree = degree(Terms),
 #sizes(c1)
 #crossing(c1, Terms)
 #plot(c1, Terms, layout=layout_with_dh(Terms))
+clique.number(bn2.pr$proj1)
+clique.number(bn2.pr$proj2)
 clique.number(Terms)
-largest_cliques(Terms)
+Cliques <- largest_cliques(Terms)
+Cliques[[1]]
+Cliques[[2]]
+
+
 
 library(intergraph)
 graph.coreness(Terms)
@@ -106,7 +158,7 @@ coreness <- graph.coreness(Terms)
 table(coreness)
 
 V(Terms)$color <- coreness + 1
-plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=20, edge.width=2, edge.color="lightgray",  layout = layout_on_grid, main = "Soft Skills Unipartite Network")
+plot(Terms, vertex.label.color="black", vertex.label.cex=1.2, vertex.color="green", vertex.size=15, edge.width=2, edge.color="lightgray",  layout = layout_components, main = "Soft Skills Unipartite Network")
 plot(Programs,vertex.label.color="black", vertex.label.cex=1, vertex.color="pink", vertex.size=20, edge.width=2, edge.color="lightgray", layout = layout_components, main = "Programs Unipartite Network")
 
 cluster_fast_greedy(Terms)
@@ -134,7 +186,7 @@ plot(Programs, vertex.color=membership(c2), layout=layout_with_dh)
 graph.density(Programs)
 CentralityPrograms <- data.frame(degree(Programs))
 graph.density(Terms)
-get.adjacency(Programs)  
+ADJ <- get.adjacency(Programs)  
 T2 <- as.matrix(get.adjacency(Terms)  )
 
 summary(bn2)
