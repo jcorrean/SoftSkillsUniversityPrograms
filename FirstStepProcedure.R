@@ -15,6 +15,7 @@ verbos <- data.frame(table(Network$keyword))
 
 library(igraph)
 bn2 <- graph.data.frame(Network,directed=FALSE)
+igraph::degree(bn2)
 bipartite.mapping(bn2)
 V(bn2)$type <- bipartite_mapping(bn2)$type
 V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
@@ -45,19 +46,19 @@ V(bn2)$shape[1:10]
 #write.gexf(pave, output = "/home/jc/pave.gexf", replace = TRUE)
 
 # Network node prominence measures
-Degrees <- data.frame(degree(bn2))
-Betweenness <- data.frame(betweenness(bn2))
-Closeness <- data.frame(closeness(bn2))
-Eigen <- data.frame(eigen_centrality(bn2))
+Degrees <- data.frame(igraph::degree(bn2))
+Betweenness <- data.frame(igraph::betweenness(bn2))
+Closeness <- data.frame(igraph::closeness(bn2))
+Eigen <- data.frame(igraph::eigen_centrality(bn2))
 #prominence4 <- page.rank(bn2)
 #prominence4 <- data.frame(prominence4$vector) 
 #prominence4$Program <- rownames(prominence4)
 
-table(degree(bn2,v=V(bn2)[type==FALSE]))
-mean(degree(bn2,v=V(bn2)[type==FALSE]))
-var(degree(bn2,v=V(bn2)[type==FALSE]))
-min(degree(bn2,v=V(bn2)[type==FALSE]))
-max(degree(bn2,v=V(bn2)[type==FALSE]))
+table(igraph::degree(bn2,v=V(bn2)[type==FALSE]))
+mean(igraph::degree(bn2,v=V(bn2)[type==FALSE]))
+var(igraph::degree(bn2,v=V(bn2)[type==FALSE]))
+min(igraph::degree(bn2,v=V(bn2)[type==FALSE]))
+max(igraph::degree(bn2,v=V(bn2)[type==FALSE]))
 edge_density(bn2)
 
 
@@ -68,7 +69,7 @@ V(bn2)$type <- bipartite_mapping(bn2)$type
 V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
 V(bn2)$shape <- ifelse(V(bn2)$type, "circle", "square")
 V(bn2)$label.cex <- ifelse(V(bn2)$type, 0.8, 1)
-V(bn2)$size <- sqrt(degree(bn2))
+V(bn2)$size <- sqrt(igraph::degree(bn2))
 E(bn2)$color <- "lightgrey"
   plot(bn2, 
        vertex.label = NA, 
@@ -78,13 +79,13 @@ E(bn2)$color <- "lightgrey"
 #x <- tkplot(bn2)
 
 bn2.pr <- bipartite.projection(bn2)
-max(degree(Programs))
+max(igraph::degree(Programs))
 Programs <- bn2.pr$proj1
 
-SkillsProgramsCentrality <- data.frame(Degree = degree(bn2),
-                                       Closeness = closeness(bn2),
-                                       Betweennes = betweenness(bn2),
-                                       Eigen = eigen_centrality(bn2))
+SkillsProgramsCentrality <- data.frame(Degree = igraph::degree(bn2),
+                                       Closeness = igraph::closeness(bn2),
+                                       Betweennes = igraph::betweenness(bn2),
+                                       Eigen = igraph::eigen_centrality(bn2))
 SkillsProgramsCentrality <- SkillsProgramsCentrality[ -c(5:25) ]
 
 library(psych)
