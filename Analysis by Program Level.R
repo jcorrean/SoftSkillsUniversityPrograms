@@ -9,9 +9,8 @@ docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 docvars(Textos, "Program.Level") <- Muestra$`Academic Level`
 docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 docvars(Textos, "Accreditation") <- Muestra$Accreditation
-
 summary(Textos)
-aja <- data.frame(summary(Textos, n = length(Textos)))
+
 
 SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
 MS <- corpus_subset(Textos, Program.Level == "Masters")
