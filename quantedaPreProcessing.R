@@ -14,3 +14,13 @@ TOKS <- corpus(textos$text) %>%
   tokens(remove_numbers = TRUE, remove_punct = TRUE) %>% 
   tokens_remove(stopwords("es"))
 DTM <- dfm(TOKS, tolower = FALSE)
+SoftSkills <- c("liderar", "generar", "pensamiento crítico", "analizar", "empatía")
+toks_inside <- tokens_keep(TOKS, pattern = SoftSkills, window = 0)
+DTM2 <- dfm(toks_inside)
+
+DTM3 <- as.matrix(DTM2)
+
+library(bipartite)
+plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+mod <- computeModules(DTM3)
+plotModuleWeb(mod)
