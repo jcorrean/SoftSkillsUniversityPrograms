@@ -18,12 +18,15 @@ source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
 docvars(Textos, "Program.Level") <- Muestra$`Academic Level`
 docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+docvars(Textos, "Accreditation") <- Muestra$Accreditation
 summary(Textos)
 aja <- data.frame(summary(Textos, n = length(Textos)))
 
 SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
 MS <- corpus_subset(Textos, Program.Level == "Masters")
 PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
+HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
 phd <- data.frame(summary(PhD, n = length(PhD)))
 
 #####################
@@ -117,6 +120,4 @@ TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja,
 Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
 MS <- TODAS2 %>% filter(., Program.Level == "Masters")
 PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
-Spec <- Spec %>% select(., "docname", "keyword")
-MS <- MS %>% select(., "docname", "keyword")
-PhD <- PhD %>% select(., "docname", "keyword")
+
