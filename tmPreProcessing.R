@@ -25,9 +25,10 @@ P <- tm_map(x, removeWords, stopwords(kind = "es"))
 dtm <- DocumentTermMatrix(P)
 dtm
 terminos <- data.frame(findFreqTerms(dtm))
-dtm2 <- removeSparseTerms(dtm, 0.90)
+dtm2 <- removeSparseTerms(dtm, 0.80)
 dtm3 <- as.matrix(dtm2) # At least here we have a truly adjacency matrix
-stopwords(kind = "es")
 
-
+library(bipartite)
+mod <- computeModules(dtm3)
+plotModuleWeb(mod)
 
