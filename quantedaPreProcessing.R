@@ -22,5 +22,13 @@ DTM3 <- as.matrix(DTM2)
 
 library(bipartite)
 plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+visweb(t(DTM3), textsize = 45)
 mod <- computeModules(DTM3)
 plotModuleWeb(mod)
+compart(DTM3)
+H2fun(DTM3, H2_integer=TRUE)
+networklevel(DTM3, index="ALLBUTDD", level="both", weighted=TRUE, 
+             ISAmethod="Bluethgen",  SAmethod = "Bluethgen", extinctmethod = "r", 
+             nrep = 100, CCfun=median, dist="horn", normalise=TRUE, empty.web=TRUE, 
+             logbase="e", intereven="prod", H2_integer=TRUE, fcweighted=TRUE, 
+             fcdist="euclidean", legacy=FALSE)
