@@ -24,3 +24,21 @@ aja <- data.frame(summary(Textos, n = length(Textos)))
 SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
 MS <- corpus_subset(Textos, Program.Level == "Masters")
 PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+
+library(quanteda)
+TOKS <- tokens(SPEC, remove_numbers = TRUE, remove_punct = TRUE) %>% 
+  tokens_remove(stopwords("es"))
+DTM <- dfm(TOKS, tolower = FALSE)
+SoftSkills <- c("generar", "evaluar", "liderar", "equipos", "analizar", "gestionar", "fortalecer", "identificar", "crear", "comprender") #Eigenvector
+toks_inside <- tokens_keep(TOKS, pattern = SoftSkills, window = 0)
+DTM2 <- dfm(toks_inside)
+
+DTM3 <- as.matrix(DTM2)
+colnames(DTM3)
+
+library(bipartite)
+plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+# For reporting purposes, we changed the names of the columns
+# as follows:
+colnames(DTM3)[1:10] <- c("Understand", "Generate", "Identify", "Analytical", "Strength", "Leadership", "Teamwork", "Creativity", "Evaluate", "Management") 
+plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
