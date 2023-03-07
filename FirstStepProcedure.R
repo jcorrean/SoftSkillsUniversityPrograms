@@ -188,6 +188,7 @@ plot(Programs, vertex.color=membership(c2), layout=layout_with_dh)
 graph.density(Programs)
 CentralityPrograms <- data.frame(degree(Programs))
 graph.density(Terms)
+graph.density(bn2)
 ADJ <- get.adjacency(Programs)  
 T2 <- as.matrix(get.adjacency(Terms)  )
 
