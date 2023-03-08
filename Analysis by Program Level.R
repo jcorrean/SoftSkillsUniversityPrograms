@@ -71,7 +71,11 @@ ggplot(Centralities, aes(x = Eigen.vector, y = Level, fill = Level)) +
   theme_ridges() + 
   theme(legend.position = "none") + 
   xlab("Eigenvector Centrality") + 
-  ylab("Academic Program")
+  ylab("Academic Program") + 
+  theme(axis.text.x=element_text(size=15)) +
+  theme(axis.text.y=element_text(size=15)) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=20)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=20))
 
 
 IM <- as_incidence_matrix(BNS, names = TRUE, sparse = TRUE, types = bipartite_mapping(BNS)$type)
@@ -92,7 +96,3 @@ E(BNS)$color <- "lightgrey"
 library(bipartite)
 plotweb(IM2, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
 bipartite::visweb(IM2)
-# For reporting purposes, we changed the names of the columns
-# as follows:
-colnames(DTM3)[1:10] <- c("Understand", "Generate", "Identify", "Analytical", "Strength", "Leadership", "Teamwork", "Creativity", "Evaluate", "Management") 
-plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
