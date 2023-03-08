@@ -3,35 +3,70 @@
 #MS <- MS %>% select(., "docname", "keyword")
 #PhD <- PhD %>% select(., "docname", "keyword")
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/PreProcessing.RData")
-library(quanteda)
-source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(Textos, "Program.Level") <- Muestra$`Academic Level`
-docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
-docvars(Textos, "Accreditation") <- Muestra$Accreditation
-summary(Textos)
+rm(list=setdiff(ls(), "TODAS2"))
+TODAS2$keyword <- tolower(TODAS2$keyword)
+library(dplyr)
+SpecPrograms <- TODAS2 %>% filter(., Program.Level=="Specialization") %>% 
+  select(., docname, keyword)
+MasterPrograms <- TODAS2 %>% filter(., Program.Level=="Masters") %>% 
+  select(., docname, keyword)
+DoctoratePrograms <- TODAS2 %>% filter(., Program.Level == "Doctorate") %>% 
+  select(., docname, keyword)
 
 
-SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
-MS <- corpus_subset(Textos, Program.Level == "Masters")
-PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
-QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
-HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
+library(igraph)
+BNS <- graph.data.frame(SpecPrograms, directed = FALSE)
+BNM <- graph.data.frame(MasterPrograms, directed = FALSE)
+BND <- graph.data.frame(DoctoratePrograms, directed = FALSE)
 
-# Specialization Programs
-TOKS <- tokens(SPEC, remove_numbers = TRUE, remove_punct = TRUE) %>% 
-  tokens_remove(stopwords("es"))
-DTM <- dfm(TOKS, tolower = TRUE)
-#SoftSkills <- c("generar", "evaluar", "liderar", "equipos", "analizar", "gestionar", "fortalecer", "identificar", "crear", "comprender") #Eigenvector
-#toks_inside <- tokens_keep(TOKS, pattern = SoftSkills, window = 0)
-#DTM2 <- dfm(toks_inside)
+hist(degree_distribution(BNS))
+hist(degree_distribution(BNM))
+hist(degree_distribution(BND))
 
-DTMSpec <- as.matrix(DTM)
-colnames(DTMSpec)
-topfeatures(DTM, n = 20)
+Spec <- data.frame(Degree = igraph::degree(BNS),
+                                       Closeness = igraph::closeness(BNS),
+                                       Betweennes = igraph::betweenness(BNS),
+                                       Eigen = igraph::eigen_centrality(BNS))
+Spec <- Spec[ -c(5:25) ]
+rownames(Spec)
+
+Spec <- Spec[97:135,]
+
+MS <- data.frame(Degree = igraph::degree(BNM),
+                 Closeness = igraph::closeness(BNM),
+                 Betweennes = igraph::betweenness(BNM),
+                 Eigen = igraph::eigen_centrality(BNM))
+MS <- MS[ -c(5:25) ]
+rownames(MS)
+MS <- MS[83:118,]
+
+Doc <- data.frame(Degree = igraph::degree(BND),
+                 Closeness = igraph::closeness(BND),
+                 Betweennes = igraph::betweenness(BND),
+                 Eigen = igraph::eigen_centrality(BND))
+Doc <- Doc[ -c(5:25) ]
+rownames(Doc)
+Doc <- Doc[26:58,]
+
+
+IM <- as_incidence_matrix(BNS, names = TRUE, sparse = TRUE, types = bipartite_mapping(BNS)$type)
+IM2 <- as.matrix(IM)
+
+bipartite.mapping(BNS)
+V(BNS)$type <- bipartite_mapping(BNS)$type
+V(BNS)$color <- ifelse(V(BNS)$type, "red", "green")
+V(BNS)$shape <- ifelse(V(BNS)$type, "circle", "square")
+V(BNS)$label.cex <- ifelse(V(BNS)$type, 0.8, 1)
+V(BNS)$size <- sqrt(igraph::degree(BNS))
+E(BNS)$color <- "lightgrey"
+  plot(BNS, 
+       vertex.label = NA, 
+       layout = layout_in_circle, 
+       main = "")
 
 library(bipartite)
-plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+plotweb(IM2, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+bipartite::visweb(IM2)
 # For reporting purposes, we changed the names of the columns
 # as follows:
 colnames(DTM3)[1:10] <- c("Understand", "Generate", "Identify", "Analytical", "Strength", "Leadership", "Teamwork", "Creativity", "Evaluate", "Management") 
