@@ -37,7 +37,58 @@ HQA <- HQA[23:54,]
 HQA$SS <- rownames(HQA)
 HQA$Accreditation <- "High-Quality Certification"
 
-Centralities <- list(HQA, QC)
-Centralities <- as.data.frame(do.call(rbind, Centralities))
+Centralities2 <- list(HQA, QC)
+Centralities2 <- as.data.frame(do.call(rbind, Centralities2))
 
-Resumen <- data.frame(table(Centralities$SS))
+Resumen2 <- data.frame(table(Centralities2$SS))
+
+library(ggridges)
+library(ggplot2)
+
+# Diamonds dataset is provided by R natively
+#head(diamonds)
+
+# For reporting
+
+ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, fill = Accreditation)) +
+  geom_density_ridges(alpha = 0.3) +
+  theme_ridges() + 
+  theme(legend.position = "none") + 
+  xlab("Eigenvector Centrality") + 
+  ylab("Type of Accreditation")
+
+
+IM <- as_incidence_matrix(BNHQA, names = TRUE, sparse = TRUE, types = bipartite_mapping(BNHQA)$type)
+IM2 <- as.matrix(IM)
+
+bipartite.mapping(BNHQA)
+V(BNHQA)$type <- bipartite_mapping(BNHQA)$type
+V(BNHQA)$color <- ifelse(V(BNHQA)$type, "red", "green")
+V(BNHQA)$shape <- ifelse(V(BNHQA)$type, "circle", "square")
+V(BNHQA)$label.cex <- ifelse(V(BNHQA)$type, 0.8, 1)
+V(BNHQA)$size <- sqrt(igraph::degree(BNHQA))
+E(BNHQA)$color <- "lightgrey"
+  plot(BNHQA, 
+       vertex.label = NA, 
+       layout = layout_components, 
+       main = "")
+  
+  
+library(ggplot2)
+  ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, fill = Accreditation)) +
+    geom_density_ridges(alpha = 0.3) +
+    theme_ridges() + 
+    theme(legend.position = "none") + 
+    xlab("Eigenvector Centrality") + 
+    ylab("Type of Accreditation") + 
+    theme(axis.text.x=element_text(size=15)) +
+    theme(axis.text.y=element_text(size=15)) +
+    theme(axis.title.x=element_text(face="italic", colour="black", size=20)) +
+    theme(axis.title.y=element_text(face="italic", colour="black", size=20))
+
+  
+library(bipartite)
+plotweb(IM2, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
+bipartite::visweb(IM2)
+mod <- computeModules(IM2)
+plotModuleWeb(mod)
