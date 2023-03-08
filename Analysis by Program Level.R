@@ -29,8 +29,9 @@ Spec <- data.frame(Degree = igraph::degree(BNS),
                                        Eigen = igraph::eigen_centrality(BNS))
 Spec <- Spec[ -c(5:25) ]
 rownames(Spec)
-
 Spec <- Spec[97:135,]
+Spec$SS <- rownames(Spec)
+Spec$Level <- "Specialization"
 
 MS <- data.frame(Degree = igraph::degree(BNM),
                  Closeness = igraph::closeness(BNM),
@@ -39,6 +40,9 @@ MS <- data.frame(Degree = igraph::degree(BNM),
 MS <- MS[ -c(5:25) ]
 rownames(MS)
 MS <- MS[83:118,]
+MS$SS <- rownames(MS)
+MS$Level <- "Master"
+
 
 Doc <- data.frame(Degree = igraph::degree(BND),
                  Closeness = igraph::closeness(BND),
@@ -47,6 +51,27 @@ Doc <- data.frame(Degree = igraph::degree(BND),
 Doc <- Doc[ -c(5:25) ]
 rownames(Doc)
 Doc <- Doc[26:58,]
+Doc$SS <- rownames(Doc)
+Doc$Level <- "Doctorate"
+
+Centralities <- list(Spec, MS, Doc)
+Centralities <- as.data.frame(do.call(rbind, Centralities))
+
+Resumen <- data.frame(table(Centralities$SS))
+
+library(ggridges)
+library(ggplot2)
+
+# Diamonds dataset is provided by R natively
+#head(diamonds)
+
+# basic example
+ggplot(Centralities, aes(x = Eigen.vector, y = Level, fill = Level)) +
+  geom_density_ridges(alpha = 0.3) +
+  theme_ridges() + 
+  theme(legend.position = "none") + 
+  xlab("Eigenvector Centrality") + 
+  ylab("Academic Program")
 
 
 IM <- as_incidence_matrix(BNS, names = TRUE, sparse = TRUE, types = bipartite_mapping(BNS)$type)
