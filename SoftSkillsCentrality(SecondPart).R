@@ -56,17 +56,46 @@ summary(dat$closeness.rescaled)
 colnames(dat)
 
 
-ggplot(dat, aes(x = reorder(SS, degree.rescaled), y = degree.rescaled)) +
-  geom_bar(stat = "identity") + theme_bw() + coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+p1 <- ggplot(dat, aes(x = reorder(SS, degree.rescaled), y = degree.rescaled)) +
+  geom_bar(stat = "identity", fill="lightgreen") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
 
-ggplot(dat, aes(x = reorder(SS, closeness.rescaled), y = closeness.rescaled)) +
-  geom_bar(stat = "identity") + theme_bw() + coord_flip() + xlab("Soft Skills") + ylab("Closeness Centrality (rescaled 0-1)")
+p2 <- ggplot(dat, aes(x = reorder(SS, closeness.rescaled), y = closeness.rescaled)) +
+  geom_bar(stat = "identity", fill="lightgreen") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Closeness Centrality (rescaled 0-1)")
 
-ggplot(dat, aes(x = reorder(SS, betweennes.rescaled), y = betweennes.rescaled)) +
-  geom_bar(stat = "identity") + theme_bw() + coord_flip() + xlab("Soft Skills") + ylab("Betweenness Centrality (rescaled 0-1)")
+p3 <- ggplot(dat, aes(x = reorder(SS, betweennes.rescaled), y = betweennes.rescaled)) +
+  geom_bar(stat = "identity", fill="lightgreen") + theme_bw() +
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Betweenness Centrality (rescaled 0-1)")
 
-ggplot(dat, aes(x = reorder(SS, eigenvector.rescaled), y = eigenvector.rescaled)) +
-  geom_bar(stat = "identity") + theme_bw() + coord_flip() + xlab("Soft Skills") + ylab("Eigenvector Centrality (rescaled 0-1)")
+p4 <- ggplot(dat, aes(x = reorder(SS, eigenvector.rescaled), y = eigenvector.rescaled)) +
+  geom_bar(stat = "identity", fill="lightgreen") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Eigenvector Centrality (rescaled 0-1)")
+
+
+
+library(ggpubr)
+figure <- ggarrange(p1, p2, p3, p4, 
+                    labels = c("(A)", "(B)", "(C)", "(D)"),
+                    ncol = 2, nrow = 2)
+
+figure
 
 
 library(networkD3)
