@@ -3,10 +3,20 @@ load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
 # Here we found that 31 soft skills are present all across sampled programs
 table(Resumen$Freq)
+library(dplyr)
 SoftSkillsCentrality <- Centralities %>% filter(., grepl('analizar|ayudar|compartir|competir|comprender|comunicar|crear|creatividad|dirigir|equipos|ético|evaluar|flexibilidad|fomentar|fortalecer|generar|gestionar|identificar|impulsar|innovar|interactuar|liderar|orientar|pensamiento crítico|persuasión|planificar|reconocer|reflexionar|resolver|responsable|tomar decisiones', SS))
 
+boxplot(SoftSkillsCentrality$Closeness, xlab = "Closeness") 
+boxplot(SoftSkillsCentrality$Betweennes, xlab = "Betweennes") 
+boxplot(SoftSkillsCentrality$Degree,  xlab = "Degree")
+boxplot(SoftSkillsCentrality$Eigen.vector, xlab = "Eigenvector")
+
+
+boxplot(SoftSkillsCentrality[c(2,4)])
+
+
 library(ggplot2)
-ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vector)) +
+ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Closeness), y=Closeness)) +
   scale_fill_discrete(name="Academic Program") + 
   geom_point(size=5, aes(colour=Level), alpha=0.6) +
   # Use a larger dot
@@ -21,7 +31,7 @@ ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vector)) +
   theme(axis.title.x=element_text(face="italic", colour="black", size=20)) +
   theme(axis.title.y=element_text(face="italic", colour="black", size=20)) +
   xlab("Soft Skills") +
-  ylab("Eigenvector Centrality") +
+  ylab("Closeness Centrality") +
   theme(legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
 
 
