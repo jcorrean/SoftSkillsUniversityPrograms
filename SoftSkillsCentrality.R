@@ -68,11 +68,11 @@ SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'competir'] <- 'Competitivene
 SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'planificar'] <- 'Planning'
 
 library(ggplot2)
-ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vector)) +
+p <- ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vector)) +
   scale_fill_discrete(name="Academic Program") + 
   geom_point(size=5, aes(colour=Level), alpha=0.6) +
   # Use a larger dot
-  theme_bw() +
+  theme_bw() + 
   theme(axis.text.x = element_text(angle=60, hjust=1),
         panel.grid.major.y = element_line(colour="grey60", linetype="dashed"),
         panel.grid.minor.y = element_blank(),
@@ -84,4 +84,6 @@ ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vector)) +
   theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
   xlab("Soft Skills") +
   ylab("Eigenvector Centrality") +
-  theme(legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
+  theme(legend.title=element_text(size=20), legend.text = element_text(size = 20), legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
+
+p + labs(color = "Graduate Program")
