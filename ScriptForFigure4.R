@@ -1,5 +1,4 @@
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/DataForFigure4.RData")
-rm(list=setdiff(ls(), "TODAS"))
+source("home/jc/Documents/GitHub/SoftSkillsUniversityPrograms/SofSkillsSpanish2EnglishTranslations.R")
 # Figure Panel A
 TODAS$keyword <- tolower(TODAS$keyword)
 TODAS$keyword
