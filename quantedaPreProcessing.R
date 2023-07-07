@@ -25,7 +25,7 @@ library(bipartite)
 plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
 # For reporting purposes, we changed the names of the columns
 # as follows:
-colnames(DTM3)[1:10] <- c("Understand", "Generate", "Identify", "Analytical", "Strength", "Leadership", "Teamwork", "Creativity", "Evaluate", "Management") 
+colnames(DTM3)[1:10] <- c("Understanding", "Generate", "Identify", "Analytical", "Strength", "Leadership", "Teamwork", "Creativity", "Evaluate", "Management") 
 plotweb(DTM3, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
 
 mod <- computeModules(t(DTM3))
