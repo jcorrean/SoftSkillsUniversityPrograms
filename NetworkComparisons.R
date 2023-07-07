@@ -27,8 +27,8 @@ p2 <- ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, fill = Accr
   theme(axis.title.y=element_text(face="italic", colour="black", size=35))
 
 
-#library(ggpubr)
-#ggarrange(p1, p2, labels = c("(A)", "(B)"), ncol = 1, nrow = 2)
+library(ggpubr)
+ggarrange(p1, p2, labels = c("(A)", "(B)"), ncol = 1, nrow = 2)
 
 library(psych)
 ByProgram <- psych::describe.by(Centralities$Eigen.vector, group = Centralities$Level, mat = TRUE)
@@ -38,3 +38,4 @@ summary(one.way)
 ByAccreditation <- psych::describe.by(Centralities2$Eigen.vector, group = Centralities2$Accreditation, mat = TRUE)
 one.way2 <- aov(Eigen.vector ~ Accreditation, data = Centralities2)
 summary(one.way2)
+
