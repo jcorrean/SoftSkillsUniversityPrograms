@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\begin{document}
+
+
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[t]{.45\textwidth}
+    % \centering
+\includegraphics[width=1cm]{(A).png}    \includegraphics[scale=.14]{A1.pdf}
+    % \subcaption{First Figure}
+    \label{fig:figure1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.45\textwidth}
+    % \centering
+\includegraphics[width=1cm]{(B).png}    \includegraphics[scale=.14]{A2.pdf}
+    % \subcaption{Second Figure}
+    \label{fig:figure2}
+  \end{minipage}
+  
+  \vspace{0.5cm}
+  
+  \begin{minipage}[b]{1\textwidth}
+    \centering
+\includegraphics[width=1cm]{(C).png}    \includegraphics[width=\textwidth]{F6.pdf}
+    % \subcaption{Third Figure}
+    \label{fig:figure3}
+  \end{minipage}
+  % \caption{Three Figures}
+  \label{fig:three_figures}
+\end{figure}
+
+\end{document}
+
