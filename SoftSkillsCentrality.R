@@ -86,4 +86,5 @@ p <- ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vecto
   ylab("Eigenvector Centrality") +
   theme(legend.title=element_text(size=20), legend.text = element_text(size = 20), legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
 
-p + labs(color = "Graduate Program")
+p + labs(color = "Program Type")
+
