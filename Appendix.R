@@ -185,13 +185,19 @@ CS <- centrality_scores
 normalized_scores <- (CS - min(CS)) / (max(CS) - min(CS))
 
 # Create a color palette with different colors
-color_palette <- colorRampPalette(c("red", "pink", "lightgreen", "green"))(length(unique(normalized_scores)))
+color_palette <- colorRampPalette(c("red", "pink", "lightgreen", "green"))
+(length(unique(normalized_scores)))
 
 # Assign colors to nodes based on their normalized centrality scores
 node_colors <- color_palette[rank(normalized_scores)]
 
 # Plot the network with node colors based on centrality
-plot(Terms, vertex.label.color = "black", vertex.label.cex = 0.8, vertex.color = node_colors, vertex.size = 15, edge.width = 0.5, edge.color = "lightgray", layout = layout_components, main = "")
+plot(Terms, vertex.label.color = "black", 
+     vertex.label.cex = 0.8, 
+     vertex.color = node_colors, 
+     vertex.size = 15, edge.width = 0.5, 
+     edge.color = "lightgray", 
+     layout = layout_components, main = "")
 
 # Figure 4 Panel B
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/DataForFigure4.RData")
@@ -251,7 +257,8 @@ p1 <- ggplot(Centralities, aes(x = Eigen.vector, y = Level, fill = Level)) +
   theme(axis.title.y=element_text(face="italic", colour="black", size=35))
 
 
-p2 <- ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, fill = Accreditation)) +
+p2 <- ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, 
+  fill = Accreditation)) +
   geom_density_ridges(alpha = 0.3) +
   theme_ridges() + 
   theme(legend.position = "none") + 
@@ -271,7 +278,19 @@ ggarrange(p1, p2, labels = c("(A)", "(B)"), ncol = 1, nrow = 2)
 # Here we found that 31 soft skills are present all across sampled programs
 table(Resumen$Freq)
 library(dplyr)
-SoftSkillsCentrality <- Centralities %>% filter(., grepl('analizar|ayudar|compartir|competir|comprender|comunicar|crear|creatividad|dirigir|equipos|ético|evaluar|flexibilidad|fomentar|fortalecer|generar|gestionar|identificar|impulsar|innovar|interactuar|liderar|orientar|pensamiento crítico|persuasión|planificar|reconocer|reflexionar|resolver|responsable|tomar decisiones', SS))
+SoftSkillsCentrality <- Centralities %>% 
+  filter(., grepl('analizar|ayudar|
+                  compartir|competir|
+                  comprender|comunicar|
+                  crear|creatividad|dirigir|
+                  equipos|ético|evaluar|
+                  flexibilidad|fomentar|
+                  fortalecer|generar|gestionar|
+                  identificar|impulsar|innovar|
+                  interactuar|liderar|orientar|
+                  pensamiento crítico|persuasión|
+                  planificar|reconocer|reflexionar|
+                  resolver|responsable|tomar decisiones', SS))
 
 boxplot(SoftSkillsCentrality$Closeness, xlab = "Closeness") 
 boxplot(SoftSkillsCentrality$Betweennes, xlab = "Betweennes") 
@@ -351,13 +370,25 @@ p <- ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vecto
   theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
   xlab("Soft Skills") +
   ylab("Eigenvector Centrality") +
-  theme(legend.title=element_text(size=20), legend.text = element_text(size = 20), legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
+  theme(legend.title=element_text(size=20), 
+        legend.text = element_text(size = 20), 
+        legend.position=c(0.95,0.1), 
+        legend.justification=c(0.95,0.1)) 
 
 p + labs(color = "Program Type")
 
 # Figure 6
 library(dplyr)
-SoftSkillsCentrality <- Centralities %>% filter(., grepl('analizar|ayudar|compartir|competir|comprender|comunicar|crear|creatividad|dirigir|equipos|ético|evaluar|flexibilidad|fomentar|fortalecer|generar|gestionar|identificar|impulsar|innovar|interactuar|liderar|orientar|pensamiento crítico|persuasión|planificar|reconocer|reflexionar|resolver|responsable|tomar decisiones', SS))
+SoftSkillsCentrality <- Centralities %>% 
+  filter(., grepl('analizar|ayudar|compartir|
+                  competir|comprender|comunicar|
+                  crear|creatividad|dirigir|equipos|
+                  ético|evaluar|flexibilidad|fomentar|
+                  fortalecer|generar|gestionar|
+                  identificar|impulsar|innovar|interactuar|
+                  liderar|orientar|pensamiento crítico|
+                  persuasión|planificar|reconocer|reflexionar|
+                  resolver|responsable|tomar decisiones', SS))
 
 SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'generar'] <- 'Generate'
 SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'creatividad'] <- 'Creativity'
@@ -397,10 +428,14 @@ options(scipen = 999)
 dat <- SoftSkillsCentrality %>% filter(., Level == "Doctorate")
 
 library(datawizard)
-dat <- dat %>% mutate(., degree.rescaled = ifelse(Degree == 0, 0.00, rescale(dat$Degree, to = c(0,1))))
-dat <- dat %>% mutate(., closeness.rescaled = ifelse(Closeness == 0, 0.00, rescale(dat$Closeness, to = c(0,1))))
-dat <- dat %>% mutate(., betweennes.rescaled = ifelse(Betweennes == 0, 0.00, rescale(dat$Betweennes, to = c(0,1))))
-dat <- dat %>% mutate(., eigenvector.rescaled = ifelse(Eigen.vector == 0, 0.00, rescale(dat$Eigen.vector, to = c(0,1))))
+dat <- dat %>% 
+mutate(., degree.rescaled = ifelse(Degree == 0, 0.00, rescale(dat$Degree, to = c(0,1))))
+dat <- dat %>% 
+mutate(., closeness.rescaled = ifelse(Closeness == 0, 0.00, rescale(dat$Closeness, to = c(0,1))))
+dat <- dat %>% 
+mutate(., betweennes.rescaled = ifelse(Betweennes == 0, 0.00, rescale(dat$Betweennes, to = c(0,1))))
+dat <- dat %>% 
+mutate(., eigenvector.rescaled = ifelse(Eigen.vector == 0, 0.00, rescale(dat$Eigen.vector, to = c(0,1))))
 
 summary(dat$eigenvector.rescaled)
 summary(dat$degree.rescaled)
