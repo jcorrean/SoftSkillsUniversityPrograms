@@ -86,17 +86,30 @@ conven <- data.frame(kwic(Textos, pattern = "convencer"))
 
 
 
-rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
+rm(institution, LevelsOfficials, 
+   LevelsPrivate, listado, Muestra, 
+   Officials, Private, Sector, textos, 
+   Textos, DATA_DIR)
 
 
-TODAS <- rbind(persu, conven, flex, td, decidir, sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
-               comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
-               empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
-               interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
-               resolver, respetar, responsable, tolerar)
+TODAS <- rbind(persu, conven, flex, td, decidir, sp, 
+               pc, creatividad, paciencia, crear, 
+               innovar, acercar, analizar, apreciar, 
+               argumentar, ayudar, cambiar, compartir, 
+               competir, comprender, comprometer, 
+               comprometerse, comunicar, conflicto, 
+               controlar, cooperar, dirigir, empatia, 
+               equipo, etico, evaluar, fomentar, fortalecer, 
+               generar, gestionar, identificar, impulsar,
+               interactuar, liderar, manifestar, motivar, 
+               negociar, orientar, planificar, reconocer, 
+               reflexionar, resolver, respetar, 
+               responsable, tolerar)
 colnames(aja)[1]  <- "docname"  
 library(dplyr)
-TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja, by = "docname") 
+TODAS2 <- TODAS %>% 
+  select(-from, -to, -pre, -post, -pattern) %>% 
+  left_join(aja, by = "docname") 
 Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
 MS <- TODAS2 %>% filter(., Program.Level == "Masters")
 PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
