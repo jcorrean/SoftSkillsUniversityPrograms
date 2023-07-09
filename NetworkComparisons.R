@@ -2,7 +2,8 @@
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
 load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
 
-
+library(ggplot2)
+library(ggridges)
 p1 <- ggplot(Centralities, aes(x = Eigen.vector, y = Level, fill = Level)) +
   geom_density_ridges(alpha = 0.3) +
   theme_ridges() + 
