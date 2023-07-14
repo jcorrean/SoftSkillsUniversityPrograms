@@ -1,5 +1,5 @@
 library(readr)
-Data_Figure2 <- read_csv("Documents/GitHub/SoftSkillsUniversityPrograms/Data Figure2.csv")
+Data_Figure2 <- read_csv("Documents/GitHub/SoftSkillsUniversityPrograms/Data_Figure2.csv")
 
 library(igraph)
 # Figure Panel A
