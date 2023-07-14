@@ -19,5 +19,19 @@ Programs <- bn2.pr$proj2
 Skills <- bn2.pr$proj1
 
 # Plot the network with node colors based on centrality
-plot(Skills, vertex.label.color = "black", vertex.label.cex = 1.5, vertex.color = "lightgreen", vertex.size = 60, edge.width = 1.5, edge.color = "lightgray", layout = layout_components, main = "")
-plot(Programs, vertex.label.color = "black", vertex.label.cex = 1.2, vertex.color = "pink", vertex.size = 40, edge.width = 1.5, edge.color = "lightgray", layout = layout_components, main = "")
+plot(Skills, vertex.label.color = "black", 
+     vertex.label.cex = 1.5, 
+     vertex.color = "lightgreen", 
+     vertex.size = 60, 
+     edge.width = 2.5, 
+     edge.color = "lightgray", 
+     layout = layout_components, main = "")
+
+plot(Programs, vertex.label.color = "black", 
+     vertex.label.cex = 1.2, 
+     vertex.color = "pink", 
+     vertex.size = 40, 
+     edge.width = 2.5, 
+     edge.color = "lightgray", 
+     layout = layout_components, 
+     main = "")
