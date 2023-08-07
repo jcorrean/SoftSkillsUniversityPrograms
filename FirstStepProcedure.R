@@ -75,7 +75,7 @@ E(bn2)$color <- "lightgrey"
        vertex.label = NA, 
        layout = layout_as_bipartite, 
        main = "")
-  
+  summary(bn2)
 #x <- tkplot(bn2)
 
 bn2.pr <- bipartite.projection(bn2)
