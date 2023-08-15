@@ -1,20 +1,16 @@
 # Step 1: Opening the sample of texts
 # this local folder is a clone of the GitHub Repo
-setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
-listado <- data.frame(dir())
 library(readtext)
-library(tm)
-DirSource()
-# Get the data directory from readtext
-DATA_DIR <- system.file("extdata/", package = "readtext")
-textos <- readtext(listado$dir..)
+textos <- readtext("Paper Soft Skills Sampled Programs/")
 textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 
 # Step 2: Creating a corpus from texts
 library(quanteda)
 Textos <- corpus(textos)
-
+library(dplyr)
+textos <- mutate(textos, Program = ifelse(grepl("Especiali", text), "Specialization",
+                                          ifelse(grepl("Maestr", text), "Master", "Doctorate")))
 
 # Step 3: Tagging the texts according to
 # their program type and accreditation
