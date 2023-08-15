@@ -1,5 +1,6 @@
 # Pre-Processing
 # Hola Pilar
+#Aquí
 setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
 listado <- data.frame(dir())
 library(readtext)
