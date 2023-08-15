@@ -4,7 +4,9 @@
 library(readtext)
 textos <- readtext("Paper Soft Skills Sampled Programs/")
 textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
-
+library(dplyr)
+textos <- mutate(textos, Program = ifelse(grepl("Especiali", text), "Specialization",
+                                             ifelse(grepl("Maestr", text), "Master", "Doctorate")))
 
 library(quanteda)
 Textos <- corpus(textos)
