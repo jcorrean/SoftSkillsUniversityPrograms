@@ -1,5 +1,5 @@
 # Pre-Processing
-
+# Hola Pilar
 setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
 listado <- data.frame(dir())
 library(readtext)
@@ -13,10 +13,12 @@ textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
 
 library(quanteda)
 Textos <- corpus(textos)
+head(summary(Textos), 10)
 #AllP <- dfm(Textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
 docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(Textos, "Program.Level") <- Muestra$`Academic Level`
+a <- data.frame(summary(Textos, n = length(Textos)))
+
 docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 docvars(Textos, "Accreditation") <- Muestra$Accreditation
 summary(Textos)
