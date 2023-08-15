@@ -18,9 +18,9 @@ docvars(Textos, "Accreditation") <- Muestra$Accreditation
 summary(Textos)
 aja <- data.frame(summary(Textos, n = length(Textos)))
 
-SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
-MS <- corpus_subset(Textos, Program.Level == "Masters")
-PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+SPEC <- corpus_subset(Textos, Program == "Specialization")
+MS <- corpus_subset(Textos, Program == "Masters")
+PhD <- corpus_subset(Textos, Program == "Doctorate")
 QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
 HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
 phd <- data.frame(summary(PhD, n = length(PhD)))
