@@ -12,10 +12,7 @@ library(quanteda)
 Textos <- corpus(textos)
 head(summary(Textos), 10)
 #AllP <- dfm(Textos)
-source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-a <- data.frame(summary(Textos, n = length(Textos)))
-
+source("SampleAnalysis.R")
 docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
 docvars(Textos, "Accreditation") <- Muestra$Accreditation
 summary(Textos)
