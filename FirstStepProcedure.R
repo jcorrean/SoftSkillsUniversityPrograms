@@ -216,3 +216,4 @@ edge.connectivity(bn2)
 SN <- as.matrix(get.adjacency(bn2))
 SN1 <- as.data.frame(SN)
 Skills <- as.data.frame(get.incidence(bn2))
+
