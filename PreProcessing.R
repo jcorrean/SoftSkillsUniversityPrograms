@@ -1,6 +1,5 @@
 # Pre-Processing
-# Hola Pilar
-#Aquí
+
 
 library(readtext)
 textos <- readtext("Paper Soft Skills Sampled Programs/")
