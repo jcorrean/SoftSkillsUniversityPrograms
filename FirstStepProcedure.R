@@ -1,7 +1,7 @@
 # First Step Procedure
 # Analysis of Skills centrality
 
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/PreProcessing.RData")
+load("PreProcessing.RData")
 rm(list=setdiff(ls(), "TODAS"))
 TODAS$keyword <- tolower(TODAS$keyword)
 Dictionary <- data.frame(table(TODAS$keyword))
