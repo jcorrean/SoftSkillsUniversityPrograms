@@ -96,3 +96,4 @@ figure <- ggarrange(p1, p2, p3, p4,
                     ncol = 2, nrow = 2)
 
 figure
+
