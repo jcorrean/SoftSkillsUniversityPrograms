@@ -1,5 +1,5 @@
 # Analysis by Accreditation Type
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/PreProcessing.RData")
+load("PreProcessing.RData")
 rm(list=setdiff(ls(), "TODAS2"))
 TODAS2$keyword <- tolower(TODAS2$keyword)
 library(dplyr)
@@ -44,11 +44,6 @@ Resumen2 <- data.frame(table(Centralities2$SS))
 
 library(ggridges)
 library(ggplot2)
-
-# Diamonds dataset is provided by R natively
-#head(diamonds)
-
-# For reporting
 
 ggplot(Centralities2, aes(x = Eigen.vector, y = Accreditation, fill = Accreditation)) +
   geom_density_ridges(alpha = 0.3) +
