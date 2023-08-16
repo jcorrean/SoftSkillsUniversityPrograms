@@ -120,9 +120,9 @@ TODAS2 <- TODAS %>%
   select(-from, -to, -pre, -post, -pattern) %>%
   left_join(aja, by = "docname")
 Spec <- TODAS2 %>% filter(., Program == "Specialization")
-MS <- TODAS2 %>% filter(., Program == "Masters")
+MS <- TODAS2 %>% filter(., Program == "Master")
 PhD <- TODAS2 %>% filter(., Program == "Doctorate")
-
+save.image("DataForFigure4.RData")
 
 # Step 5. Plotting results
 load("DataForFigure4.RData")
