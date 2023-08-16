@@ -1,6 +1,4 @@
 # Pre-Processing
-
-
 library(readtext)
 textos <- readtext("Paper Soft Skills Sampled Programs/")
 textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
@@ -24,28 +22,6 @@ PhD <- corpus_subset(Textos, Program == "Doctorate")
 QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
 HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
 phd <- data.frame(summary(PhD, n = length(PhD)))
-
-#####################
-#ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
-#ave
-#ave2 <- tokens(PhD, remove_numbers = TRUE, remove_punct = TRUE) %>%  
-#  dfm(remove = stopwords("spanish"))
-#topfeatures(ave2, 50)
-
-#ave3 <- dfm_remove(ave2, c("través", "áreas", "maestría", "mba", "i", "ii", "doctorado", "interinstitucional", "universidad", "pedagógica", "nacional"))
-
-#ave4 <- as.matrix(ave3)
-#ave5 <- dfm_keep(ave3, c("generar", "trabajo en equipo", "liderar", "ético"))
-#ave6 <- as.matrix(ave5)
-#library(bipartite)
-#plotweb2(ave6)
-#visweb(ave6)
-#mod <- computeModules(ave6)
-#plotModuleWeb(mod)
-#row.names(ave6)[1:27] <- phd$Programa
-
-#visweb(ave6)
-#######################
 
 
 # Keywords-in-context Search
@@ -102,7 +78,7 @@ conven <- data.frame(kwic(Textos, pattern = "convencer"))
 
 
   
-rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
+rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, DATA_DIR)
 
 
 TODAS <- rbind(persu, conven, flex, td, decidir, sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
