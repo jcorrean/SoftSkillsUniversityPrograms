@@ -103,3 +103,5 @@ library(bipartite)
 plotweb(IM2, method = "normal", col.high = "lightgreen", col.low = "pink", col.interaction = "lightgrey")
 bipartite::visweb(IM2)
 save.image("DataForFigure4B.RData")
+save.image("ResultsbyProgram.RData")
+
