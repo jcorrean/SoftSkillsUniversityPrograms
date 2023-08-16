@@ -3,27 +3,42 @@
 library(readtext)
 textos <- readtext("Paper Soft Skills Sampled Programs/")
 textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
-
-
-# Step 2: Creating a corpus from texts
-library(quanteda)
-Textos <- corpus(textos)
 library(dplyr)
 textos <- mutate(textos, Program = ifelse(grepl("Especiali", text), "Specialization",
                                           ifelse(grepl("Maestr", text), "Master", "Doctorate")))
 
+# Step 2: Creating a corpus from texts
+library(quanteda)
+Textos <- corpus(textos)
+
+
 # Step 3: Tagging the texts according to
 # their program type and accreditation
-source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(Textos, "Program.Level") <- Muestra$Programa
-docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
-docvars(Textos, "Accreditation") <- Muestra$Accreditation
+source("SampleAnalysis.R")
+Muestra$codigoprograma <- gsub("[^0-9-]", "", Muestra$codigoprograma)
+Muestra <- Muestra[order(Muestra$codigoprograma), ]
+textos <- textos[order(textos$doc_id), ]
+names(Muestra)[4] <- "doc_id"
+table(textos$doc_id == Muestra$doc_id)
+textos$doc_id == Muestra$doc_id
+textos$doc_id[72]
+Muestra$doc_id[72]
+textos$doc_id[79]
+Muestra$doc_id[79]
+Muestra$doc_id[72] <- "14-2"
+Muestra$doc_id[79] <- "15-7"
+table(textos$doc_id == Muestra$doc_id)
+
+library(tidyverse)
+textos <- textos %>% inner_join(Muestra, join_by(doc_id)) 
+docvars(Textos, "Program") <- textos$Program
+docvars(Textos, "Institution") <- textos$NOMBRE_INSTITUCIÓN
+docvars(Textos, "Accreditation") <- textos$Accreditation
 summary(Textos)
 aja <- data.frame(summary(Textos, n = length(Textos)))
-SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
-MS <- corpus_subset(Textos, Program.Level == "Masters")
-PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+SPEC <- corpus_subset(Textos, Program == "Specialization")
+MS <- corpus_subset(Textos, Program == "Masters")
+PhD <- corpus_subset(Textos, Program == "Doctorate")
 QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
 HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
 phd <- data.frame(summary(PhD, n = length(PhD)))
@@ -104,12 +119,13 @@ library(dplyr)
 TODAS2 <- TODAS %>%
   select(-from, -to, -pre, -post, -pattern) %>%
   left_join(aja, by = "docname")
-Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
-MS <- TODAS2 %>% filter(., Program.Level == "Masters")
-PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
+Spec <- TODAS2 %>% filter(., Program == "Specialization")
+MS <- TODAS2 %>% filter(., Program == "Masters")
+PhD <- TODAS2 %>% filter(., Program == "Doctorate")
+
 
 # Step 5. Plotting results
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/DataForFigure4.RData")
+load("DataForFigure4.RData")
 rm(list=setdiff(ls(), "TODAS"))
 TODAS[TODAS=="acercar"] <- "S1"
 TODAS[TODAS=="analizar"] <- "S2"
