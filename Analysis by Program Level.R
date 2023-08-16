@@ -1,16 +1,12 @@
-# Analysis by Program Level
-#Spec <- Spec %>% select(., "docname", "keyword")
-#MS <- MS %>% select(., "docname", "keyword")
-#PhD <- PhD %>% select(., "docname", "keyword")
 load("PreProcessing.RData")
 rm(list=setdiff(ls(), "TODAS2"))
 TODAS2$keyword <- tolower(TODAS2$keyword)
 library(dplyr)
-SpecPrograms <- TODAS2 %>% filter(., Program.Level=="Specialization") %>% 
+SpecPrograms <- TODAS2 %>% filter(., Program=="Specialization") %>% 
   select(., docname, keyword)
-MasterPrograms <- TODAS2 %>% filter(., Program.Level=="Masters") %>% 
+MasterPrograms <- TODAS2 %>% filter(., Program=="Master") %>% 
   select(., docname, keyword)
-DoctoratePrograms <- TODAS2 %>% filter(., Program.Level == "Doctorate") %>% 
+DoctoratePrograms <- TODAS2 %>% filter(., Program == "Doctorate") %>% 
   select(., docname, keyword)
 
 
@@ -29,8 +25,9 @@ Spec <- data.frame(Degree = igraph::degree(BNS),
                                        Eigen = igraph::eigen_centrality(BNS))
 Spec <- Spec[ -c(5:25) ]
 rownames(Spec)
-Spec <- Spec[97:135,]
 Spec$SS <- rownames(Spec)
+Spec <- Spec[order(Spec$SS), ]
+Spec <- Spec[101:140,]
 Spec$Level <- "Specialization"
 
 MS <- data.frame(Degree = igraph::degree(BNM),
@@ -39,10 +36,10 @@ MS <- data.frame(Degree = igraph::degree(BNM),
                  Eigen = igraph::eigen_centrality(BNM))
 MS <- MS[ -c(5:25) ]
 rownames(MS)
-MS <- MS[83:118,]
 MS$SS <- rownames(MS)
+MS <- MS[order(MS$SS), ]
+MS <- MS[74:105,]
 MS$Level <- "Master"
-
 
 Doc <- data.frame(Degree = igraph::degree(BND),
                  Closeness = igraph::closeness(BND),
