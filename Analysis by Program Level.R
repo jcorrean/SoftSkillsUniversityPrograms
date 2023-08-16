@@ -2,7 +2,7 @@
 #Spec <- Spec %>% select(., "docname", "keyword")
 #MS <- MS %>% select(., "docname", "keyword")
 #PhD <- PhD %>% select(., "docname", "keyword")
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/PreProcessing.RData")
+load("PreProcessing.RData")
 rm(list=setdiff(ls(), "TODAS2"))
 TODAS2$keyword <- tolower(TODAS2$keyword)
 library(dplyr)
