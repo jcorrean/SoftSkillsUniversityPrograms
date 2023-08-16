@@ -1,6 +1,6 @@
 # Analysis of Soft Skills Centrality 
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
+load("ResultsbyProgram.RData")
+load("ResultsbyAccreditation.RData")
 # Here we found that 31 soft skills are present all across sampled programs
 table(Resumen$Freq)
 library(dplyr)
