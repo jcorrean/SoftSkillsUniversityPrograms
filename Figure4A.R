@@ -1,5 +1,6 @@
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/DataForFigure4.RData")
+load("DataForFigure4.RData")
 rm(list=setdiff(ls(), "TODAS"))
+TODAS$keyword <- tolower(TODAS$keyword)
 TODAS[TODAS=="acercar"] <- "S1"
 TODAS[TODAS=="analizar"] <- "S2"
 TODAS[TODAS=="argumentar"] <- "S3"
