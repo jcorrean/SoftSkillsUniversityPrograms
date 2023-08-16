@@ -1,20 +1,10 @@
 # Analysis of Soft Skills Centrality 
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
+load("ResultsbyProgram.RData")
+load("ResultsbyAccreditation.RData")
 # Here we found that 31 soft skills are present all across sampled programs
 table(Resumen$Freq)
 library(dplyr)
 SoftSkillsCentrality <- Centralities %>% filter(., grepl('analizar|ayudar|compartir|competir|comprender|comunicar|crear|creatividad|dirigir|equipos|ético|evaluar|flexibilidad|fomentar|fortalecer|generar|gestionar|identificar|impulsar|innovar|interactuar|liderar|orientar|pensamiento crítico|persuasión|planificar|reconocer|reflexionar|resolver|responsable|tomar decisiones', SS))
-
-boxplot(SoftSkillsCentrality$Closeness, xlab = "Closeness") 
-boxplot(SoftSkillsCentrality$Betweennes, xlab = "Betweennes") 
-boxplot(SoftSkillsCentrality$Degree,  xlab = "Degree")
-boxplot(SoftSkillsCentrality$Eigen.vector, xlab = "Eigenvector")
-
-
-boxplot(SoftSkillsCentrality[c(2,4)])
-
-
 library(ggplot2)
 ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Closeness), y=Closeness)) +
   scale_fill_discrete(name="Academic Program") + 
@@ -33,7 +23,6 @@ ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Closeness), y=Closeness)) +
   xlab("Soft Skills") +
   ylab("Closeness Centrality") +
   theme(legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
-
 
 SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'generar'] <- 'Generate'
 SoftSkillsCentrality$SS[SoftSkillsCentrality$SS == 'creatividad'] <- 'Creativity'
@@ -87,3 +76,4 @@ p <- ggplot(SoftSkillsCentrality, aes(x=reorder(SS, Eigen.vector), y=Eigen.vecto
   theme(legend.title=element_text(size=20), legend.text = element_text(size = 20), legend.position=c(0.95,0.1), legend.justification=c(0.95,0.1)) 
 
 p + labs(color = "Program Type")
+
