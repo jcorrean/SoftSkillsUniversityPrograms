@@ -1,6 +1,6 @@
 library(GGally)
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
+load("ResultsbyProgram.RData")
+load("ResultsbyAccreditation.RData")
 
 table(Resumen$Freq)
 library(dplyr)
