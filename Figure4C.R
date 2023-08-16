@@ -1,4 +1,4 @@
-load("/home/jc/Documents/GitHub/SoftSkillsUniversityPrograms/DataforResultingBipartiteNetwork.RData")
+load("DataforResultingBipartiteNetwork.RData")
 rm(list=setdiff(ls(), "DTM3"))
 # The DTM3 object is a matrix with 10 columns (with the soft skills 
 # that proved to be more central and all programs as rows. In this
