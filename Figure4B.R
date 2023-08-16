@@ -16,3 +16,4 @@ pairs.panels(Gen,
              rug = TRUE,
              stars = TRUE
 )
+
