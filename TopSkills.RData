@@ -1,0 +1,134 @@
+table(Resumen$Freq)(Resumen$Freq)
+library(dplyr)
+Centralities2 <- Centralities2 %>% filter(., grepl('analizar|ayudar|compartir|competir|comprender|comunicar|crear|creatividad|dirigir|equipos|ético|evaluar|flexibilidad|fomentar|fortalecer|generar|gestionar|identificar|impulsar|innovar|interactuar|liderar|orientar|pensamiento crítico|persuasión|planificar|reconocer|reflexionar|resolver|responsable|tomar decisiones', SS))
+
+Centralities2$SS[Centralities2$SS == 'generar'] <- 'Generate'
+Centralities2$SS[Centralities2$SS == 'creatividad'] <- 'Creativity'
+Centralities2$SS[Centralities2$SS == 'crear'] <- 'Create'
+Centralities2$SS[Centralities2$SS == 'liderar'] <- 'Leadership'
+Centralities2$SS[Centralities2$SS == 'identificar'] <- 'Identify'
+Centralities2$SS[Centralities2$SS == 'analizar'] <- 'Analytical'
+Centralities2$SS[Centralities2$SS == 'resolver'] <- 'Solving'
+Centralities2$SS[Centralities2$SS == 'evaluar'] <- 'Evaluate'
+Centralities2$SS[Centralities2$SS == 'equipos'] <- 'Teamwork'
+Centralities2$SS[Centralities2$SS == 'gestionar'] <- 'Management'
+Centralities2$SS[Centralities2$SS == 'dirigir'] <- 'Addressing'
+Centralities2$SS[Centralities2$SS == 'tomar decisiones'] <- 'Decision Making'
+Centralities2$SS[Centralities2$SS == 'reconocer'] <- 'Acknowledge'
+Centralities2$SS[Centralities2$SS == 'innovar'] <- 'Innovate'
+Centralities2$SS[Centralities2$SS == 'responsable'] <- 'Accountability'
+Centralities2$SS[Centralities2$SS == 'pensamiento crítico'] <- 'Critical Thinking'
+Centralities2$SS[Centralities2$SS == 'comprender'] <- 'Understanding'
+Centralities2$SS[Centralities2$SS == 'ético'] <- 'Ethical Thinking'
+Centralities2$SS[Centralities2$SS == 'fortalecer'] <- 'Strength'
+Centralities2$SS[Centralities2$SS == 'orientar'] <- 'Guidance'
+Centralities2$SS[Centralities2$SS == 'compartir'] <- 'Sharing'
+Centralities2$SS[Centralities2$SS == 'fomentar'] <- 'Foment'
+Centralities2$SS[Centralities2$SS == 'interactuar'] <- 'Social Interaction'
+Centralities2$SS[Centralities2$SS == 'comunicar'] <- 'Communication'
+Centralities2$SS[Centralities2$SS == 'flexibilidad'] <- 'Flexibility'
+Centralities2$SS[Centralities2$SS == 'reflexionar'] <- 'Thoughtfulness'
+Centralities2$SS[Centralities2$SS == 'ayudar'] <- 'Helping others'
+Centralities2$SS[Centralities2$SS == 'persuasión'] <- 'Persuasiveness'
+Centralities2$SS[Centralities2$SS == 'impulsar'] <- 'Thrust'
+Centralities2$SS[Centralities2$SS == 'competir'] <- 'Competitiveness'
+Centralities2$SS[Centralities2$SS == 'planificar'] <- 'Planning'
+
+library(tidyverse)
+Top10Specialization <- Centralities2 %>% 
+  filter(,Centralities2$Level == "Specialization") %>% 
+  select(, SS, Eigen.vector) %>% 
+  arrange(, desc(Eigen.vector))
+
+Spec <- head(Top10Specialization, 10)
+
+library(xtable)
+spec <- xtable(Spec)
+print(spec, include.rownames = TRUE, floating = FALSE, tabular.environment = "longtable")
+
+Top10Master <- Centralities2 %>% 
+  filter(,Centralities2$Level == "Master") %>% 
+  select(, SS, Eigen.vector) %>% 
+  arrange(, desc(Eigen.vector))
+
+MS <- head(Top10Master, 10)
+
+master <- xtable(MS)
+print(master, include.rownames = TRUE, floating = FALSE, tabular.environment = "longtable")
+
+
+Top10PhD <- Centralities2 %>% 
+  filter(,Centralities2$Level == "Doctorate") %>% 
+  select(, SS, Eigen.vector) %>% 
+  arrange(, desc(Eigen.vector))
+
+PhD <- head(Top10PhD, 10)
+
+phd <- xtable(PhD)
+print(phd, include.rownames = TRUE, floating = FALSE, tabular.environment = "longtable")
+
+Top10HQS <- Centralities2 %>% 
+  filter(,Accreditation == "High-Quality Certification") %>% 
+  select(, SS, Eigen.vector) %>% 
+  arrange(, desc(Eigen.vector))
+
+HQS <- head(Top10HQS, 10)
+
+hqs <- xtable(HQS)
+print(hqs, include.rownames = TRUE, floating = FALSE, tabular.environment = "longtable")
+
+
+Top10QC <- Centralities2 %>% 
+  filter(,Accreditation == "Qualified Certification") %>% 
+  select(, SS, Eigen.vector) %>% 
+  arrange(, desc(Eigen.vector))
+
+QC <- head(Top10QC, 10)
+
+qc <- xtable(QC)
+print(qc, include.rownames = TRUE, floating = FALSE, tabular.environment = "longtable")
+
+
+ggplot(spec, aes(x = reorder(SS, Eigen.vector), y = Eigen.vector)) +
+  geom_bar(stat = "identity", fill="purple2") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+
+
+ggplot(master, aes(x = reorder(SS, Eigen.vector), y = Eigen.vector)) +
+  geom_bar(stat = "identity", fill="purple2") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+
+
+
+ggplot(PhD, aes(x = reorder(SS, Eigen.vector), y = Eigen.vector)) +
+  geom_bar(stat = "identity", fill="purple2") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+
+ggplot(HQS, aes(x = reorder(SS, Eigen.vector), y = Eigen.vector)) +
+  geom_bar(stat = "identity", fill="purple2") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+
+ggplot(QC, aes(x = reorder(SS, Eigen.vector), y = Eigen.vector)) +
+  geom_bar(stat = "identity", fill="purple2") + theme_bw() + 
+  theme(axis.text.x=element_text(size=25, colour="black")) +
+  theme(axis.text.y=element_text(size=25, colour="black")) +
+  theme(axis.title.x=element_text(face="italic", colour="black", size=25)) +
+  theme(axis.title.y=element_text(face="italic", colour="black", size=25)) +
+  coord_flip() + xlab("Soft Skills") + ylab("Degree Centrality (rescaled 0-1)")
+
