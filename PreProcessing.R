@@ -1,6 +1,6 @@
 # Pre-Processing
 
-setwd("/home/jc/Documents/Paper Soft Skills Sampled Programs")
+setwd("C:/Users/Pily/OneDrive/PROYECTO HABILID-BLANDAS/ANALISIS DIC2022")
 listado <- data.frame(dir())
 library(readtext)
 library(tm)
