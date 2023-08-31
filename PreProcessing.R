@@ -1,37 +1,55 @@
 # Pre-Processing
-
-setwd("C:/Users/Pily/OneDrive/PROYECTO HABILID-BLANDAS/ANALISIS DIC2022")
-listado <- data.frame(dir())
 library(readtext)
-library(tm)
-DirSource()
-# Get the data directory from readtext
-DATA_DIR <- system.file("extdata/", package = "readtext")
-textos <- readtext(listado$dir..)
+textos <- readtext("Paper Soft Skills Sampled Programs/")
 textos$doc_id <- gsub("[^0-9-]", "", textos$doc_id)
-
+library(dplyr)
+textos <- mutate(textos, Program = ifelse(grepl("Especiali", text), "Specialization",
+                                             ifelse(grepl("Maestr", text), "Master", "Doctorate")))
 
 library(quanteda)
-AllPrograms <- corpus(textos)
+Textos <- corpus(textos)
+head(summary(Textos), 10)
+#AllP <- dfm(Textos)
 source("~/Documents/GitHub/SoftSkillsUniversityPrograms/SampleAnalysis.R")
-docvars(AllPrograms, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
-docvars(AllPrograms, "Program.Level") <- Muestra$`Academic Level`
-docvars(AllPrograms, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+docvars(Textos, "Programa") <- Muestra$NOMBRE_DEL_PROGRAMA
+a <- data.frame(summary(Textos, n = length(Textos)))
 
-SPEC <- corpus_subset(AllPrograms, Program.Level == "Specialization")
-MS <- corpus_subset(AllPrograms, Program.Level == "Masters")
-PhD <- corpus_subset(AllPrograms, Program.Level == "Doctorate")
+docvars(Textos, "Institution") <- Muestra$NOMBRE_INSTITUCIÓN
+docvars(Textos, "Accreditation") <- Muestra$Accreditation
+summary(Textos)
+aja <- data.frame(summary(Textos, n = length(Textos)))
+
+SPEC <- corpus_subset(Textos, Program.Level == "Specialization")
+MS <- corpus_subset(Textos, Program.Level == "Masters")
+PhD <- corpus_subset(Textos, Program.Level == "Doctorate")
+QC <- corpus_subset(Textos, Accreditation == "Qualified Certification")
+HQC <- corpus_subset(Textos, Accreditation == "High-Quality Certification")
+phd <- data.frame(summary(PhD, n = length(PhD)))
+
+#####################
+#ave <- tokens(Textos, remove_numbers = TRUE, remove_punct = TRUE) %>%  dfm()
+#ave
+#ave2 <- tokens(PhD, remove_numbers = TRUE, remove_punct = TRUE) %>%  
+#  dfm(remove = stopwords("spanish"))
+#topfeatures(ave2, 50)
+
+#ave3 <- dfm_remove(ave2, c("través", "áreas", "maestría", "mba", "i", "ii", "doctorado", "interinstitucional", "universidad", "pedagógica", "nacional"))
+
+#ave4 <- as.matrix(ave3)
+#ave5 <- dfm_keep(ave3, c("generar", "trabajo en equipo", "liderar", "ético"))
+#ave6 <- as.matrix(ave5)
+#library(bipartite)
+#plotweb2(ave6)
+#visweb(ave6)
+#mod <- computeModules(ave6)
+#plotModuleWeb(mod)
+#row.names(ave6)[1:27] <- phd$Programa
+
+#visweb(ave6)
+#######################
 
 
-summary(AllPrograms)
-aja <- data.frame(summary(AllPrograms, n = length(AllPrograms)))
-
-
-
-Textos <- tokens(AllPrograms)
-Textos <- tokens_tolower(Textos)
-Textos
-
+# Keywords-in-context Search
 pc <- data.frame(kwic(Textos, pattern = phrase("pensamiento crítico")))
 sp <- data.frame(kwic(Textos, pattern = phrase("solucionar problemas")))
 comunicar <- data.frame(kwic(Textos, pattern = "comunicar"))
@@ -77,11 +95,18 @@ manifestar <- data.frame(kwic(Textos, pattern = "manifestar"))
 responsable <- data.frame(kwic(Textos, pattern = "responsable"))
 evaluar <- data.frame(kwic(Textos, pattern = "evaluar"))
 innovar <- data.frame(kwic(Textos, pattern = "innovar"))
+decidir <- data.frame(kwic(Textos, pattern = "decidir"))
+td <- data.frame(kwic(Textos, pattern = phrase("tomar decisiones")))
+flex <- data.frame(kwic(Textos, pattern = "flexibilidad"))
+persu <- data.frame(kwic(Textos, pattern = "persua*"))
+conven <- data.frame(kwic(Textos, pattern = "convencer"))
 
+
+  
 rm(institution, LevelsOfficials, LevelsPrivate, listado, Muestra, Officials, Private, Sector, textos, Textos, DATA_DIR)
 
 
-TODAS <- rbind(sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
+TODAS <- rbind(persu, conven, flex, td, decidir, sp, pc, creatividad, paciencia, crear, innovar, acercar, analizar, apreciar, argumentar, ayudar, cambiar, compartir, competir,
                comprender, comprometer, comprometerse, comunicar, conflicto, controlar, cooperar, dirigir,
                empatia, equipo, etico, evaluar, fomentar, fortalecer, generar, gestionar, identificar, impulsar,
                interactuar, liderar, manifestar, motivar, negociar, orientar, planificar, reconocer, reflexionar, 
@@ -92,6 +117,4 @@ TODAS2 <- TODAS %>% select(-from, -to, -pre, -post, -pattern) %>% left_join(aja,
 Spec <- TODAS2 %>% filter(., Program.Level == "Specialization")
 MS <- TODAS2 %>% filter(., Program.Level == "Masters")
 PhD <- TODAS2 %>% filter(., Program.Level == "Doctorate")
-Spec <- Spec %>% select(., "docname", "keyword")
-MS <- MS %>% select(., "docname", "keyword")
-PhD <- PhD %>% select(., "docname", "keyword")
+

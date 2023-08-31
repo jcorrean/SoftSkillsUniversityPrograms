@@ -87,3 +87,4 @@ plotweb(IM2, method = "normal", col.high = "lightgreen", col.low = "pink", col.i
 bipartite::visweb(IM2)
 mod <- computeModules(IM2)
 plotModuleWeb(mod)
+
