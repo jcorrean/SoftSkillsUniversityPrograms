@@ -17,6 +17,8 @@ E(bn2)$color <- "lightgrey"
 bn2.pr <- bipartite.projection(bn2)
 Programs <- bn2.pr$proj2
 Skills <- bn2.pr$proj1
+class(Skills)
+#matw1 <- as.matrix(get.adjacency(Skills))
 
 # Plot the network with node colors based on centrality
 plot(Skills, vertex.label.color = "black", 
