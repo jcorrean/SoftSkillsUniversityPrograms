@@ -78,4 +78,3 @@ node_colors <- color_palette[rank(normalized_scores)]
 
 # Plot the network with node colors based on centrality
 plot(Terms, vertex.label.color = "black", vertex.label.cex = 0.8, vertex.color = node_colors, vertex.size = 15, edge.width = 0.5, edge.color = "lightgray", layout = layout_components, main = "")
-
