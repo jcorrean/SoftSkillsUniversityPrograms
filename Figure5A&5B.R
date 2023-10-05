@@ -1,6 +1,6 @@
 # Network Comparisons
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyProgram.RData")
-load("~/Documents/GitHub/SoftSkillsUniversityPrograms/ResultsbyAccreditation.RData")
+load("ResultsbyProgram.RData")
+load("ResultsbyAccreditation.RData")
 
 library(ggplot2)
 library(ggridges)
